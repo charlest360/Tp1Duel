@@ -1,5 +1,5 @@
 package abstracts.duel;
 
-public interface IParry {
+public interface IParry extends ICapacity {
 
 }

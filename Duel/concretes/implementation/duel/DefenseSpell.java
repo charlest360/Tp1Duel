@@ -9,4 +9,8 @@ public class DefenseSpell extends Spell implements IParry {
 		super(efficacity);
 	}
 
+	@Override
+	public int getCapacityPower(int fighterIntellect) {
+		return super.getCapacityPower(fighterIntellect)*3;
+	}
 }

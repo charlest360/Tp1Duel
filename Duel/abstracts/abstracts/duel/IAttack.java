@@ -1,5 +1,5 @@
 package abstracts.duel;
 
-public interface IAttack {
+public interface IAttack extends ICapacity {
 
 }

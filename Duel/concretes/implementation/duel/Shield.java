@@ -6,22 +6,26 @@ import exceptions.duel.ShieldProtectionIsTooLowException;
 
 public class Shield implements IParry {
 
-	public final int MINIMUM_PROTECTION = 20;
-	public final int MAXIMUM_PROTECTION = 100; 
-	
+	//Attributes
 	public int protection;
 	
 	
-	
+	//Constructor
 	public Shield(int protection) {
 		validateShieldAttributes(protection);
 		this.protection = protection;
 	}
 	
+	//Methods
 	private void validateShieldAttributes(int protection) {
 		
-		if (protection < MINIMUM_PROTECTION) {throw new ShieldProtectionIsTooLowException();}
+		if (protection < MINIMUM_ATTRIBUTE_VALUE) {throw new ShieldProtectionIsTooLowException();}
 		
-		if (protection > MAXIMUM_PROTECTION) {throw new ShieldProtectionIsTooHighException();}
+		if (protection > MAXIMUM_ATTRIBUTE_VALUE) {throw new ShieldProtectionIsTooHighException();}
+	}
+
+	@Override 
+	public int getCapacityPower(int fighterStrength) {
+		return (fighterStrength*this.protection)/100;
 	}
 }

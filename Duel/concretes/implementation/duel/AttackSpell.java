@@ -9,4 +9,9 @@ public class AttackSpell extends Spell implements IAttack {
 		super(efficacity);
 	}
 
+	@Override
+	public int getCapacityPower(int fighterIntellect) {
+		return super.getCapacityPower(fighterIntellect)*3;
+	}
+
 }

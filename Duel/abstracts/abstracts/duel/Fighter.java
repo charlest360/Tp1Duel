@@ -7,6 +7,7 @@ public abstract class Fighter {
 	
 	public final int MAXIMUM_SUM_OF_FIGHTERS_ATTRIBUTES = 100; 
 	
+	private String name;
 	private int strength;
 	private int dexterity;
 	private int intellect;
@@ -15,10 +16,10 @@ public abstract class Fighter {
 	
 	
 	
-	public Fighter(int strength, int dexterity, int intellect, int focus) {
+	public Fighter(String name,int strength, int dexterity, int intellect, int focus) {
 		
 		validateAttributes(strength,dexterity,intellect,focus);
-		
+		this.name = name;
 		this.strength = strength;
 		this.dexterity =dexterity;
 		this.intellect = intellect;

@@ -4,8 +4,8 @@ import abstracts.duel.Fighter;
 
 public class Wizard extends Fighter {
 
-	public Wizard(int force, int dexterity, int intellect, int focus) {
-		super(force, dexterity, intellect, focus);
+	public Wizard(String name,int force, int dexterity, int intellect, int focus) {
+		super(name,force, dexterity, intellect, focus);
 	}
 
 }

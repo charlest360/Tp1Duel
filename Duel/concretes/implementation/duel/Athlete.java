@@ -4,8 +4,8 @@ import abstracts.duel.Fighter;
 
 public class Athlete extends Fighter {
 
-	public Athlete(int force, int dexterity, int intellect, int focus) {
-		super(force, dexterity, intellect, focus);
+	public Athlete(String name,int force, int dexterity, int intellect, int focus) {
+		super(name,force, dexterity, intellect, focus);
 	}
 
 }

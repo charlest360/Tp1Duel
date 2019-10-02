@@ -3,10 +3,7 @@ package abstracts.duel;
 import exceptions.duel.SpellEfficacityIsTooHighException;
 import exceptions.duel.SpellEfficacityIsTooLowException;
 
-public abstract class Spell {
-	
-	public final int MINIMUM_EFFICACITY =20;
-	public final int MAXIMUM_EFFICACITY = 100;	
+public abstract class Spell implements ICapacity {
 	
 	
 	public int efficacity;
@@ -14,11 +11,18 @@ public abstract class Spell {
 	
 	
 	public Spell(int efficacity) {
+		ValidateSpellEfficacity(efficacity);
 		this.efficacity = efficacity;
 	}
 	
-	public void ValidateSpellEfficacity(int efficacity) {
-		if (efficacity < MINIMUM_EFFICACITY) {throw new SpellEfficacityIsTooLowException();}
-		if (efficacity > MAXIMUM_EFFICACITY) {throw new SpellEfficacityIsTooHighException();}
+	private void ValidateSpellEfficacity(int efficacity) {
+		if (efficacity < MINIMUM_ATTRIBUTE_VALUE) {throw new SpellEfficacityIsTooLowException();}
+		if (efficacity > MAXIMUM_ATTRIBUTE_VALUE) {throw new SpellEfficacityIsTooHighException();}
 	}
+	
+	public int getCapacityPower(int fighterIntellect) {
+		return (fighterIntellect*this.efficacity)/100;
+	}
+	
+	
 }

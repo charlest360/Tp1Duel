@@ -1,5 +1,5 @@
 package abstracts.duel;
 
-public interface IHeal {
+public interface IHeal extends ICapacity {
 
 }

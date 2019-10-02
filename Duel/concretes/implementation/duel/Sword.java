@@ -1,27 +1,32 @@
 package implementation.duel;
 
 import abstracts.duel.IAttack;
-import exceptions.duel.SwordImpactIsToHighException;
-import exceptions.duel.SwordImpactIsToLowException;
+import exceptions.duel.SwordImpactIsTooHighException;
+import exceptions.duel.SwordImpactIsTooLowException;
 
 public class Sword implements IAttack {
 	
-	public final int MINIMUM_IMPACT = 20;
-	public final int MAXIMUM_IMPACT = 100; 
-	
+	//Attributes
 	public int impact;
 	
 	
-	
+	//Constructor
 	public Sword(int impact) {
 		validateSwordAttributes(impact);
 		this.impact = impact;
 	}
 	
+	
+	//Methods
 	private void validateSwordAttributes(int impact) {
 		
-		if (impact < MINIMUM_IMPACT) {throw new SwordImpactIsToLowException();}
+		if (impact < MINIMUM_ATTRIBUTE_VALUE) {throw new SwordImpactIsTooLowException();}
 		
-		if (impact > MAXIMUM_IMPACT) {throw new SwordImpactIsToHighException();}
+		if (impact > MAXIMUM_ATTRIBUTE_VALUE) {throw new SwordImpactIsTooHighException();}
+	}
+
+	@Override
+	public int getCapacityPower(int fighterStrength) {
+		return(fighterStrength*this.impact)/100;
 	}
 }

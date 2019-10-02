@@ -5,8 +5,6 @@ import exceptions.duel.HealingPotionEfficacityIsTooHighException;
 import exceptions.duel.HealingPotionEfficacityIsTooLowException;
 
 public class HealingPotion implements IHeal {
-	public final int MINIMUM_EFFICACITY = 20;
-	public final int MAXIMUM_EFFICACITY = 100; 
 	
 	public int efficacity;
 	
@@ -19,8 +17,15 @@ public class HealingPotion implements IHeal {
 	
 	private void validateHealingPotionAttributes(int protection) {
 		
-		if (protection < MINIMUM_EFFICACITY) {throw new HealingPotionEfficacityIsTooLowException();}
+		if (protection < MINIMUM_ATTRIBUTE_VALUE) {throw new HealingPotionEfficacityIsTooLowException();}
 		
-		if (protection > MAXIMUM_EFFICACITY) {throw new HealingPotionEfficacityIsTooHighException();}
+		if (protection > MAXIMUM_ATTRIBUTE_VALUE) {throw new HealingPotionEfficacityIsTooHighException();}
 	}
+
+	@Override
+	public int getCapacityPower(int fighterDexterity) {
+		return (fighterDexterity*this.efficacity)/100;
+	}
+
+	
 }

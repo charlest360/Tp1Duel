@@ -8,5 +8,10 @@ public class HealingSpell extends Spell implements IHeal {
 	public HealingSpell(int efficacity) {
 		super(efficacity);
 	}
+
+	@Override
+	public int getCapacityPower(int fighterIntellect) {
+		return super.getCapacityPower(fighterIntellect);
+	}
 	
 }
