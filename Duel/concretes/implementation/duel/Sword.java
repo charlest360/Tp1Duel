@@ -7,7 +7,7 @@ import exceptions.duel.SwordImpactIsTooLowException;
 public class Sword implements IAttack {
 	
 	//Attributes
-	public int impact;
+	private int impact;
 	
 	
 	//Constructor

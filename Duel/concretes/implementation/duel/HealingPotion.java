@@ -6,7 +6,7 @@ import exceptions.duel.HealingPotionEfficacityIsTooLowException;
 
 public class HealingPotion implements IHeal {
 	
-	public int efficacity;
+	private int efficacity;
 	
 	
 	
@@ -15,11 +15,11 @@ public class HealingPotion implements IHeal {
 		this.efficacity = efficacity;
 	}
 	
-	private void validateHealingPotionAttributes(int protection) {
+	private void validateHealingPotionAttributes(int efficacity) {
 		
-		if (protection < MINIMUM_ATTRIBUTE_VALUE) {throw new HealingPotionEfficacityIsTooLowException();}
+		if (efficacity < MINIMUM_ATTRIBUTE_VALUE) {throw new HealingPotionEfficacityIsTooLowException();}
 		
-		if (protection > MAXIMUM_ATTRIBUTE_VALUE) {throw new HealingPotionEfficacityIsTooHighException();}
+		if (efficacity > MAXIMUM_ATTRIBUTE_VALUE) {throw new HealingPotionEfficacityIsTooHighException();}
 	}
 
 	@Override

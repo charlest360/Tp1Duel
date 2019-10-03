@@ -7,7 +7,7 @@ import exceptions.duel.ShieldProtectionIsTooLowException;
 public class Shield implements IParry {
 
 	//Attributes
-	public int protection;
+	private int protection;
 	
 	
 	//Constructor

@@ -3,7 +3,7 @@ package abstracts.duel;
 import exceptions.duel.SpellEfficacityIsTooHighException;
 import exceptions.duel.SpellEfficacityIsTooLowException;
 
-public abstract class Spell implements ICapacity {
+public abstract class Spell implements ISkill {
 	
 	
 	public int efficacity;
