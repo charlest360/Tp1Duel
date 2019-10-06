@@ -1,9 +1,7 @@
 package implementation.duel;
 
 import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
-
 import abstracts.duel.IFighter;
 import abstracts.duel.ISkill;
 import exceptions.duel.*;

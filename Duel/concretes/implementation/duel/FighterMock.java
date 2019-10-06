@@ -15,6 +15,15 @@ public class FighterMock implements IFighter  {
 	private int hp;
 	private ArrayList<ISkill> skillList = new ArrayList<ISkill>();
 	
+	public final int NB_OF_ATTRIBUTES_WINNER_INCREMENTS = 4; //Strength,Dexterity,Intellect and Focus
+	public final int NB_OF_ATTRIBUTES_LOSER_DECREMENTS = 5; //Strength,Dexterity,Intellect,Focus and Hp
+	
+	
+	//Ici , la variable contient le nb d'appel des setter d'attributs pour Strength,Dexterity,Intellect,Focus et Hp.
+	//Lors de la victoire d'un fighter, le nb d'appel devrait etre à 4 et lors d'une défaite à 5.
+	public static int NB_OF_ATTRIBUTES_SETTING_FUNCTIONS_CALL = 0; 
+	
+	
 	public FighterMock(String name,int strength, int dexterity, int intellect, int focus,ISkill skill1,ISkill skill2) {
 		this.name = name;
 		this.strength = strength;
@@ -26,6 +35,9 @@ public class FighterMock implements IFighter  {
 		this.skillList.add(skill2);
 	}
 
+	
+	
+	//Methods used in Tests
 	@Override
 	public int getStrength() {
 		return this.strength;
@@ -40,6 +52,40 @@ public class FighterMock implements IFighter  {
 	public int getIntellect() {
 		return this.intellect;
 	}
+	
+	@Override
+	public boolean hasSkill(ISkill skill) {
+		return true;
+	}
+	
+	@Override
+	public void setStrength(int newStrength) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setDexterity(int newDexterity) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setIntellect(int newIntellect) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public void setFocus(int newFocus) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	
+	
+	//Methods unused for tests 
 
 	@Override
 	public int getHp() {
@@ -79,23 +125,7 @@ public class FighterMock implements IFighter  {
 		return 0;
 	}
 
-	@Override
-	public void setStrength(int newStrength) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setDexterity(int newDexterity) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setIntellect(int newIntellect) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	@Override
 	public int getFocus() {
@@ -103,9 +133,7 @@ public class FighterMock implements IFighter  {
 		return 0;
 	}
 
-	@Override
-	public void setFocus(int newFocus) {
-		// TODO Auto-generated method stub
-		
-	}
+
+
+	
 }

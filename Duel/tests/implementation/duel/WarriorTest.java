@@ -320,4 +320,30 @@ public class WarriorTest {
 		warrior.getSkill(2);
 	}
 	
+	@Test public void creatingValidWarrior_WHEN_askingHasSkillWithSkillHeHas_THEN_hasSkillReturnsTrue() {
+		//Arrange 
+		final ISkill SKILL1 = new SkillMock();
+		IFighter warrior = new Warrior(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,SKILL1,ANY_SKILL);
+		
+		//Act
+		final boolean ACTUAL_ANSWER = warrior.hasSkill(SKILL1);
+		final boolean EXPECTED_ANSWER = true;
+		
+		//Assert
+		assertEquals(EXPECTED_ANSWER,ACTUAL_ANSWER);
+	}
+		
+	@Test public void creatingValidWarrior_WHEN_askingHasSkillWithSkillHeDoesntHave_THEN_hasSkillReturnsFalse() {
+		//Arrange 
+		final ISkill SKILL1 = new SkillMock();
+		IFighter warrior = new Warrior(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+		
+		//Act
+		final boolean ACTUAL_ANSWER = warrior.hasSkill(SKILL1);
+		final boolean EXPECTED_ANSWER = false;
+		
+		//Assert
+		assertEquals(EXPECTED_ANSWER,ACTUAL_ANSWER);
+	}
+	
 }

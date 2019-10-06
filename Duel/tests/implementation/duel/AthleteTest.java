@@ -280,7 +280,7 @@ public class AthleteTest {
 	}
 		
 		
-	@Test public void creatingValidAthlete_WHEN_removingFirstSKill_THEN_secondSkillBecomesFirstSkill() {
+	@Test public void creatingValidAthlete_WHEN_removingFirstSkill_THEN_secondSkillBecomesFirstSkill() {
 		//Arrange
 		final ISkill SKILL1 = new SkillMock();
 		final ISkill SKILL2 = new SkillMock();
@@ -320,6 +320,32 @@ public class AthleteTest {
 					
 		//Act
 		athlete.getSkill(2);
+	}
+	
+	@Test public void creatingValidAthlete_WHEN_askingHasSkillWithSkillHeHas_THEN_hasSkillReturnsTrue() {
+		//Arrange 
+		final ISkill SKILL1 = new SkillMock();
+		IFighter athlete = new Athlete(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,SKILL1,ANY_SKILL);
+		
+		//Act
+		final boolean ACTUAL_ANSWER = athlete.hasSkill(SKILL1);
+		final boolean EXPECTED_ANSWER = true;
+		
+		//Assert
+		assertEquals(EXPECTED_ANSWER,ACTUAL_ANSWER);
+	}
+	
+	@Test public void creatingValidAthlete_WHEN_askingHasSkillWithSkillHeDoesntHave_THEN_hasSkillReturnsFalse() {
+		//Arrange 
+		final ISkill SKILL1 = new SkillMock();
+		IFighter athlete = new Athlete(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+		
+		//Act
+		final boolean ACTUAL_ANSWER = athlete.hasSkill(SKILL1);
+		final boolean EXPECTED_ANSWER = false;
+		
+		//Assert
+		assertEquals(EXPECTED_ANSWER,ACTUAL_ANSWER);
 	}
 }	
 		
