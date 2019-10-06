@@ -71,11 +71,7 @@ public class FighterMock implements IFighter  {
 		return null;
 	}
 
-	@Override
-	public int getIndexOfSkill(ISkill skill) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 
 	@Override
 	public int getCapacityPower(ISkill skill) {

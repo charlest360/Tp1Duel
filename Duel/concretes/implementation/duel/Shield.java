@@ -1,6 +1,5 @@
 package implementation.duel;
 
-import abstracts.duel.Fighter;
 import abstracts.duel.IFighter;
 import abstracts.duel.IParry;
 import exceptions.duel.ShieldProtectionIsTooHighException;

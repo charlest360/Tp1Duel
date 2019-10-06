@@ -14,7 +14,7 @@ public interface IFighter {
 	
 	public ISkill getSkill(int index);
 	
-	public int getIndexOfSkill(ISkill skill);
+	//public int getIndexOfSkill(ISkill skill);
 	
 	 public int getCapacityPower(ISkill skill);
 
@@ -33,4 +33,6 @@ public interface IFighter {
 	 public int getFocus();
 	 
 	 public void setFocus(int newFocus);
+
+	public boolean hasSkill(ISkill skill);
 }

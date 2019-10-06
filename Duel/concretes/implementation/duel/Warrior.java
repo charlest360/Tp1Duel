@@ -35,5 +35,10 @@ public class Warrior extends Fighter {
 		super.validateIntellect(strength, dexterity, intellect, focus);
 		if (intellect+MIN_GAP_BETWEEN_INTELLECT_AND_FOCUS < focus)  { throw new WarriorIntellectIsTooLowException();}
 	}
+
+
+
+
+
 	
 }

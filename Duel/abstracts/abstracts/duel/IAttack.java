@@ -1,5 +1,5 @@
 package abstracts.duel;
 
-public interface IAttack extends ISkill {
+public interface IAttack extends IRipostSkill {
 
 }

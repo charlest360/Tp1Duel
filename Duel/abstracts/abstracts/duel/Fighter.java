@@ -91,7 +91,13 @@ public abstract class Fighter implements IFighter {
 	
 	
 	public void removeSkill(ISkill skill) {
-		this.skillList.remove(skill);
+		if(this.skillList.contains(skill)) {
+			this.skillList.remove(skill);
+		}
+		else {
+			throw new SkillIsntInSkillListException();
+		}
+		
 	}
 	
 	public ISkill getSkill(int index) {
@@ -101,18 +107,25 @@ public abstract class Fighter implements IFighter {
 		return this.skillList.get(index);
 	}
 	
-	public int getIndexOfSkill(ISkill skill) {
+	public boolean hasSkill(ISkill skill) {
+		
+		if (this.skillList.contains(skill)) {
+			return true;
+		}
+		return false;
+	}
+	
+	/*public int getIndexOfSkill(ISkill skill) {
 		if(this.skillList.contains(skill)) {
 			return skillList.indexOf(skill);
 		}
 		else {
 			throw new SkillIsntInSkillListException();
 		}
-	}
+	}*/
 	
 	 public int getCapacityPower(ISkill skill) {
-		 skill.getCapacityPower(this);
-		 return 0;
+		 return skill.getCapacityPower(this);
 	 }
 	/*QUAND ON ENLEVE POINTS ATTRIBUTS
 	 VALIDER QUE ATTRIBUTS >0 SINON

@@ -5,13 +5,16 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import abstracts.duel.Fighter;
+import abstracts.duel.IFighter;
 import abstracts.duel.ISkill;
 import exceptions.duel.FighterDexterityIsNegativeException;
 import exceptions.duel.FighterFocusIsNegativeException;
 import exceptions.duel.FighterIntellectIsNegativeException;
 import exceptions.duel.FighterStrengthIsNegativeException;
+import exceptions.duel.SkillIsntInSkillListException;
 import exceptions.duel.WizardFocusIsTooLowException;
 import exceptions.duel.WizardIntellectIsTooLowException;
+import exceptions.duel.indexOutOfBoundsOfSkillListException;
 
 public class WizardTest {
 	
@@ -233,9 +236,7 @@ public class WizardTest {
 				
 		//Assert
 		assertEquals(EXPECTED_FOCUS,ACTUAL_FOCUS);
-	}	
-	
-	//Autres tests
+	}
 	
 	@Test public void creatingValidWizard_WHEN_callingGetHp_THEN_theHpReturnedMustRespectTheHpCalculationRule() {
 		//Arrange
@@ -263,6 +264,87 @@ public class WizardTest {
 		assertEquals(EXPECTED_HP,ACTUAL_HP);
 	}
 	
-		
 	
+	
+	
+	//Tests methods related to skills
+	
+	@Test public void creatingValidWizard_WHEN_callingGetSkillWithAnIndexOfZero_THEN_theFirstSkillIsReturned() {
+		//Arrange
+		final ISkill SKILL1 = new SkillMock();
+		final ISkill SKILL2 = new SkillMock();
+			
+		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,SKILL1,SKILL2);
+			
+		//Act
+		final ISkill ACTUAL_FIRST_SKILL = wizard.getSkill(0);
+		final ISkill EXPECTED_FIRST_SKILL = SKILL1;
+							
+		//Assert
+		assertEquals(EXPECTED_FIRST_SKILL,ACTUAL_FIRST_SKILL);
+		
+	}
+		
+	@Test public void creatingValidWizard_WHEN_addingSkill_THEN_theSkillIsAddedToTheList() {
+		//Arrange
+		final ISkill SKILL3 = new SkillMock();
+			
+		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+			
+		//Act
+		wizard.addSkill(SKILL3);
+			
+		final ISkill ACTUAL_THIRD_SKILL = wizard.getSkill(2);
+		final ISkill EXPECTED_THIRD_SKILL = SKILL3;
+					
+		//Assert
+		assertEquals(EXPECTED_THIRD_SKILL,ACTUAL_THIRD_SKILL);
+		
+	}
+	
+		
+	@Test public void creatingValidWizard_WHEN_removingFirstSKill_THEN_secondSkillBecomesFirstSkill() {
+		//Arrange
+		final ISkill SKILL1 = new SkillMock();
+		final ISkill SKILL2 = new SkillMock();
+			
+		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,SKILL1,SKILL2);
+			
+		//Act
+		wizard.removeSkill(SKILL1);
+			
+		final ISkill ACTUAL_FIRST_SKILL = wizard.getSkill(0);
+		final ISkill EXPECTED_FIRST_SKILL = SKILL2;
+					
+		//Assert
+		assertEquals(EXPECTED_FIRST_SKILL,ACTUAL_FIRST_SKILL);	
+		
+	}
+		
+		
+	@Test (expected = SkillIsntInSkillListException.class)	
+	public void creatingWizard_WHEN_askingToRemoveSkillNotInList_THEN_anExceptionShouldBeThrown() {		
+			
+		//Arrange
+		final ISkill SKILL_NOT_IN_LIST = new SkillMock();
+					
+		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+					
+		//Act
+		wizard.removeSkill(SKILL_NOT_IN_LIST);
+	}
+		
+		
+	@Test (expected = indexOutOfBoundsOfSkillListException.class)	
+	public void creatingWizard_WHEN_callingGetSkillWithOutOfBoundIndex_THEN_anExceptionShouldBeThrown() {		
+			
+		//Arrange
+		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+					
+		//Act
+		wizard.getSkill(2);
+	}
+		
 }
+	
+

@@ -2,11 +2,13 @@ package implementation.duel;
 
 import static org.junit.Assert.assertEquals;
 
+
 import org.junit.Test;
 
 
 
 import abstracts.duel.Fighter;
+import abstracts.duel.IFighter;
 import abstracts.duel.ISkill;
 import exceptions.duel.*;
 
@@ -241,7 +243,85 @@ public class AthleteTest {
 		//Assert
 		assertEquals(EXPECTED_HP,ACTUAL_HP);
 	}
+
+	//Tests methods related to skills
+	
+	@Test public void creatingValidAthlete_WHEN_callingGetSkillWithAnIndexOfZero_THEN_theFirstSkillIsReturned() {
+		//Arrange
+		final ISkill SKILL1 = new SkillMock();
+		final ISkill SKILL2 = new SkillMock();
+			
+		IFighter athlete = new Athlete(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,SKILL1,SKILL2);
+			
+		//Act
+		final ISkill ACTUAL_FIRST_SKILL = athlete.getSkill(0);
+		final ISkill EXPECTED_FIRST_SKILL = SKILL1;
+		
+		//Assert
+		assertEquals(EXPECTED_FIRST_SKILL,ACTUAL_FIRST_SKILL);
+		
+		}
+		
+	@Test public void creatingValidAthlete_WHEN_addingSkill_THEN_theSkillIsAddedToTheList() {
+		//Arrange
+		final ISkill SKILL3 = new SkillMock();
+			
+		IFighter athlete = new Athlete(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+			
+		//Act
+		athlete.addSkill(SKILL3);
+			
+		final ISkill ACTUAL_THIRD_SKILL = athlete.getSkill(2);
+		final ISkill EXPECTED_THIRD_SKILL = SKILL3;
+					
+		//Assert
+		assertEquals(EXPECTED_THIRD_SKILL,ACTUAL_THIRD_SKILL);
+		
+	}
 		
 		
+	@Test public void creatingValidAthlete_WHEN_removingFirstSKill_THEN_secondSkillBecomesFirstSkill() {
+		//Arrange
+		final ISkill SKILL1 = new SkillMock();
+		final ISkill SKILL2 = new SkillMock();
+			
+		IFighter athlete = new Athlete(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,SKILL1,SKILL2);
+			
+		//Act
+		athlete.removeSkill(SKILL1);
+			
+		final ISkill ACTUAL_FIRST_SKILL = athlete.getSkill(0);
+		final ISkill EXPECTED_FIRST_SKILL = SKILL2;
+				
+		//Assert
+		assertEquals(EXPECTED_FIRST_SKILL,ACTUAL_FIRST_SKILL);	
 		
-}
+	}
+		
+		
+	@Test (expected = SkillIsntInSkillListException.class)	
+	public void creatingAthlete_WHEN_askingToRemoveSkillNotInList_THEN_anExceptionShouldBeThrown() {		
+			
+		//Arrange
+		final ISkill SKILL_NOT_IN_LIST = new SkillMock();
+					
+		IFighter athlete = new Athlete(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+					
+		//Act
+		athlete.removeSkill(SKILL_NOT_IN_LIST);
+	}
+		
+		
+	@Test (expected = indexOutOfBoundsOfSkillListException.class)	
+	public void creatingAthlete_WHEN_callingGetSkillWithOutOfBoundIndex_THEN_anExceptionShouldBeThrown() {		
+			
+		//Arrange
+		IFighter athlete = new Athlete(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+					
+		//Act
+		athlete.getSkill(2);
+	}
+}	
+		
+		
+
