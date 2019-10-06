@@ -20,8 +20,8 @@ public abstract class Spell implements ISkill {
 		if (efficacity > MAXIMUM_ATTRIBUTE_VALUE) {throw new SpellEfficacityIsTooHighException();}
 	}
 	
-	public int getCapacityPower(int fighterIntellect) {
-		return (fighterIntellect*this.efficacity)/100;
+	public int getCapacityPower(IFighter fighter) {
+		return (fighter.getIntellect()*this.efficacity)/100;
 	}
 	
 	

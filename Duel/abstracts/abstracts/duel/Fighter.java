@@ -5,10 +5,13 @@ import exceptions.duel.FighterDexterityIsNegativeException;
 import exceptions.duel.FighterFocusIsNegativeException;
 import exceptions.duel.FighterIntellectIsNegativeException;
 import exceptions.duel.FighterStrengthIsNegativeException;
+import exceptions.duel.SkillIsntInSkillListException;
 import exceptions.duel.SumOfFightersAttributesIsTooHigh;
+import exceptions.duel.indexOutOfBoundsOfSkillListException;
+
 import java.util.ArrayList;
 
-public abstract class Fighter {
+public abstract class Fighter implements IFighter {
 	
 	public final int MAXIMUM_SUM_OF_FIGHTERS_ATTRIBUTES = 100; 
 	public final static int CONSTANT_FOR_HP_CALCULATION = 200;
@@ -77,13 +80,76 @@ public abstract class Fighter {
 		return this.hp;
 	}
 	
+	public void setHp(int newHp) {
+		this.hp = newHp;
+	}
+	
 	
 	public void addSkill(ISkill skill) {
-		skillList.add(skill);
+		this.skillList.add(skill);
 	}
+	
 	
 	public void removeSkill(ISkill skill) {
-		skillList.remove(skill);
+		this.skillList.remove(skill);
 	}
 	
+	public ISkill getSkill(int index) {
+		if (this.skillList.size() <= index) {
+			throw new indexOutOfBoundsOfSkillListException();
+		}
+		return this.skillList.get(index);
+	}
+	
+	public int getIndexOfSkill(ISkill skill) {
+		if(this.skillList.contains(skill)) {
+			return skillList.indexOf(skill);
+		}
+		else {
+			throw new SkillIsntInSkillListException();
+		}
+	}
+	
+	 public int getCapacityPower(ISkill skill) {
+		 skill.getCapacityPower(this);
+		 return 0;
+	 }
+	/*QUAND ON ENLEVE POINTS ATTRIBUTS
+	 VALIDER QUE ATTRIBUTS >0 SINON
+	 ON ENLEVE SIMPLEMENT PAS
+	*/
+
+	 public int getStrength() {
+		 return this.strength;
+	 }
+	 
+	 public void setStrength(int newStrength) {
+		 this.strength = newStrength;
+	 }
+	 
+	 public int getDexterity() {
+		 return this.dexterity;
+	 }
+	 
+	 public void setDexterity(int newDexterity) {
+		 this.dexterity = newDexterity;
+	 }
+	 
+	 public int getIntellect() {
+		 return this.intellect;
+	 }
+	 
+	 public void setIntellect(int newIntellect) {
+		 this.intellect = newIntellect;
+	 }
+	 
+	 public int getFocus() {
+		 return this.focus;
+	 }
+	 
+	 public void setFocus(int newFocus) {
+		 this.focus = newFocus;
+	 }
+	 
+	 
 }

@@ -6,7 +6,7 @@ public interface ISkill {
 	public final int MAXIMUM_ATTRIBUTE_VALUE = 100;
 	
 	
-	public int getCapacityPower(int fighterSpecificAttribute);
+	public int getCapacityPower(IFighter fighter);
 	
 	
 	

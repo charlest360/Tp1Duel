@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 import exceptions.duel.*;
+import abstracts.duel.IFighter;
 import abstracts.duel.ISkill;
 
 
@@ -15,6 +16,9 @@ public class ShieldTest {
 	
 	final int ANY_PROTECTION = 50;
 	final int ANY_FIGHTER_STRENGTH = 20;
+	
+	final String ANY_NAME = "John Doe";
+	final int ANY_POINTS = 20;
 	
 	@Test (expected = ShieldProtectionIsTooLowException.class)	
 	public void creatingShield_WHEN_protectionIsToLow_THEN_anExceptionShouldBeThrown() {		
@@ -31,11 +35,14 @@ public class ShieldTest {
 	@Test
 	public void When_getCapacityPowerIsCalledOnShield_THEN_itShouldReturnTheGoodPower() {
 		//Arrange
+		
 		ISkill shield = new Shield(ANY_PROTECTION);
+		IFighter ANY_FIGHTER_MOCK = new FighterMock(ANY_NAME,ANY_FIGHTER_STRENGTH,ANY_POINTS,ANY_POINTS,ANY_POINTS,shield,shield);
+		
 		
 		//Act
-		final int ACTUAL_POWER = shield.getCapacityPower(ANY_FIGHTER_STRENGTH);
-		final int EXPECTED_POWER = (ANY_PROTECTION*ANY_FIGHTER_STRENGTH/100);
+		final int ACTUAL_POWER = shield.getCapacityPower(ANY_FIGHTER_MOCK);
+		final int EXPECTED_POWER = (ANY_FIGHTER_STRENGTH*ANY_PROTECTION/100);
 		//Assert
 		
 		assertEquals(EXPECTED_POWER,ACTUAL_POWER);

@@ -1,6 +1,8 @@
 package implementation.duel;
 
+import abstracts.duel.Fighter;
 import abstracts.duel.IAttack;
+import abstracts.duel.IFighter;
 import exceptions.duel.SwordImpactIsTooHighException;
 import exceptions.duel.SwordImpactIsTooLowException;
 
@@ -26,7 +28,7 @@ public class Sword implements IAttack {
 	}
 
 	@Override
-	public int getCapacityPower(int fighterStrength) {
-		return(fighterStrength*this.impact)/100;
+	public int getCapacityPower(IFighter fighter) {
+		return(fighter.getStrength()*this.impact)/100;
 	}
 }

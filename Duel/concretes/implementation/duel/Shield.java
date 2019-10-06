@@ -1,5 +1,7 @@
 package implementation.duel;
 
+import abstracts.duel.Fighter;
+import abstracts.duel.IFighter;
 import abstracts.duel.IParry;
 import exceptions.duel.ShieldProtectionIsTooHighException;
 import exceptions.duel.ShieldProtectionIsTooLowException;
@@ -25,7 +27,7 @@ public class Shield implements IParry {
 	}
 
 	@Override 
-	public int getCapacityPower(int fighterStrength) {
-		return (fighterStrength*this.protection)/100;
+	public int getCapacityPower(IFighter fighter) {
+		return (fighter.getStrength()*this.protection)/100;
 	}
 }

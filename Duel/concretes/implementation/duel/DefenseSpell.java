@@ -1,5 +1,7 @@
 package implementation.duel;
 
+import abstracts.duel.Fighter;
+import abstracts.duel.IFighter;
 import abstracts.duel.IParry;
 import abstracts.duel.Spell;
 
@@ -10,7 +12,7 @@ public class DefenseSpell extends Spell implements IParry {
 	}
 
 	@Override
-	public int getCapacityPower(int fighterIntellect) {
-		return super.getCapacityPower(fighterIntellect)*3;
+	public int getCapacityPower(IFighter fighter) {
+		return super.getCapacityPower(fighter)*3;
 	}
 }

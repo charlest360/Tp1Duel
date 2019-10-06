@@ -1,5 +1,7 @@
 package implementation.duel;
 
+import abstracts.duel.Fighter;
+import abstracts.duel.IFighter;
 import abstracts.duel.IHeal;
 import abstracts.duel.Spell;
 
@@ -10,8 +12,8 @@ public class HealingSpell extends Spell implements IHeal {
 	}
 
 	@Override
-	public int getCapacityPower(int fighterIntellect) {
-		return super.getCapacityPower(fighterIntellect);
+	public int getCapacityPower(IFighter fighter) {
+		return super.getCapacityPower(fighter);
 	}
 	
 }

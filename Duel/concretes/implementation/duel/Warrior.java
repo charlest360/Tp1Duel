@@ -18,6 +18,8 @@ public class Warrior extends Fighter {
 	}
 	
 	
+	
+	
 	@Override
 	protected void validateStrength(int strength, int dexterity, int intellect, int focus) {
 		super.validateStrength(strength, dexterity, intellect, focus);

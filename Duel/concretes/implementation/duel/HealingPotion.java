@@ -1,5 +1,7 @@
 package implementation.duel;
 
+import abstracts.duel.Fighter;
+import abstracts.duel.IFighter;
 import abstracts.duel.IHeal;
 import exceptions.duel.HealingPotionEfficacityIsTooHighException;
 import exceptions.duel.HealingPotionEfficacityIsTooLowException;
@@ -23,8 +25,8 @@ public class HealingPotion implements IHeal {
 	}
 
 	@Override
-	public int getCapacityPower(int fighterDexterity) {
-		return (fighterDexterity*this.efficacity)/100;
+	public int getCapacityPower(IFighter fighter) {
+		return (fighter.getDexterity()*this.efficacity)/100;
 	}
 
 	

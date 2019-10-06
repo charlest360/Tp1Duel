@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import abstracts.duel.IFighter;
 import abstracts.duel.ISkill;
 import exceptions.duel.*;
 
@@ -13,6 +14,9 @@ public class HealingSpellTest {
 	
 	final int ANY_EFFICACITY = 50;
 	final int ANY_FIGHTER_INTELLECT = 20;
+	
+	final String ANY_NAME = "John Doe";
+	final int ANY_POINTS = 20;
 	
 	@Test (expected = SpellEfficacityIsTooLowException.class)	
 	public void creatingHealingSpell_WHEN_efficacityIsToLow_THEN_anExceptionShouldBeThrown() {		
@@ -30,14 +34,17 @@ public class HealingSpellTest {
 	@Test
 	public void When_getCapacityPowerIsCalledOnHealingSpell_THEN_itShouldReturnTheGoodPower() {
 		//Arrange
+		
 		ISkill healingSpell = new HealingSpell(ANY_EFFICACITY);
+		IFighter ANY_FIGHTER_MOCK = new FighterMock(ANY_NAME,ANY_POINTS,ANY_POINTS,ANY_FIGHTER_INTELLECT,ANY_POINTS,healingSpell,healingSpell);
+		
 		
 		//Act
-		final int ACTUAL_POWER = healingSpell.getCapacityPower(ANY_FIGHTER_INTELLECT);
+		final int ACTUAL_POWER = healingSpell.getCapacityPower(ANY_FIGHTER_MOCK);
 		final int EXPECTED_POWER = (ANY_EFFICACITY*ANY_FIGHTER_INTELLECT/100);
 		//Assert
 		
-		assertEquals(ACTUAL_POWER,EXPECTED_POWER);
+		assertEquals(EXPECTED_POWER,ACTUAL_POWER);
 		
 	}
 }

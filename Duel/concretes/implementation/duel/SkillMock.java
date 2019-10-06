@@ -1,5 +1,7 @@
 package implementation.duel;
 
+
+import abstracts.duel.IFighter;
 import abstracts.duel.ISkill;
 
 public class SkillMock implements ISkill {
@@ -10,7 +12,7 @@ public class SkillMock implements ISkill {
 	
 	
 	@Override
-	public int getCapacityPower(int fighterSpecificAttribute) {
+	public int getCapacityPower(IFighter fighter) {
 		return 0;
 	}
 	
