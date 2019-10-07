@@ -21,12 +21,18 @@ public class WarriorTest {
 	final int ANY_DEXTERITY  =25;
 	final int ANY_INTELLECT = 15;
 	final int ANY_FOCUS = 15;
-	final ISkill ANY_SKILL = new SkillMock();
+	final ISkill ANY_SKILL = new SkillDummy();
 	
 	final int MINIMUM_STRENGTH = 10;
 	final int MINIMUM_DEXTERITY = 0;
 	final int MINIMUM_INTELLECT = 0;
 	final int MINIMUM_FOCUS = 0;
+	
+	@Test (expected = SumOfFightersAttributesIsTooHigh.class)	
+	public void creatingWarrior_WHEN_SumOfFightersAttributesHigherThanMaximalSumOfFightersAttributes_THEN_anExceptionShouldBeThrown() {		
+		//Act
+		Fighter fighter = new Warrior(ANY_NAME,TOO_HIGH_STRENGTH,TOO_HIGH_DEXTERITY,TOO_HIGH_INTELLECT,TOO_HIGH_FOCUS,ANY_SKILL,ANY_SKILL);
+	}
 	
 	@Test (expected = FighterStrengthIsNegativeException.class)	
 	public void creatingWarrior_WHEN_strengthIsNegative_THEN_anExceptionShouldBeThrown() {		
@@ -245,6 +251,21 @@ public class WarriorTest {
 		assertEquals(EXPECTED_HP,ACTUAL_HP);
 	}
 	
+	@Test public void creatingValidWarrior_WHEN_callingSetHpWithHpHigherThanTheInitialHp_THEN_theHpMustTakeItsInitialValue() {
+		//Arrange
+		IFighter warrior = new Warrior(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+		final int INITIAL_HP = warrior.getHp();
+		warrior.setHp(INITIAL_HP-20);
+		//Act
+		
+		warrior.setHp(INITIAL_HP+10);
+		
+		final int ACTUAL_HP = warrior.getHp();
+		final int EXPECTED_HP = INITIAL_HP;
+		
+		//Assert
+		assertEquals(EXPECTED_HP,ACTUAL_HP);
+	}
 	
 	
 
@@ -252,8 +273,8 @@ public class WarriorTest {
 	
 	@Test public void creatingValidWarrior_WHEN_callingGetSkillWithAnIndexOfZero_THEN_theFirstSkillIsReturned() {
 		//Arrange
-		final ISkill SKILL1 = new SkillMock();
-		final ISkill SKILL2 = new SkillMock();
+		final ISkill SKILL1 = new SkillDummy();
+		final ISkill SKILL2 = new SkillDummy();
 		
 		IFighter warrior = new Warrior(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,SKILL1,SKILL2);
 		
@@ -268,7 +289,7 @@ public class WarriorTest {
 	
 	@Test public void creatingValidWarrior_WHEN_addingSkill_THEN_theSkillIsAddedToTheList() {
 		//Arrange
-		final ISkill SKILL3 = new SkillMock();
+		final ISkill SKILL3 = new SkillDummy();
 		
 		IFighter warrior = new Warrior(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 		
@@ -284,8 +305,8 @@ public class WarriorTest {
 	}
 	@Test public void creatingValidWarrior_WHEN_removingFirstSKill_THEN_secondSkillBecomesFirstSkill() {
 		//Arrange
-		final ISkill SKILL1 = new SkillMock();
-		final ISkill SKILL2 = new SkillMock();
+		final ISkill SKILL1 = new SkillDummy();
+		final ISkill SKILL2 = new SkillDummy();
 		
 		IFighter warrior = new Warrior(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,SKILL1,SKILL2);
 		
@@ -303,7 +324,7 @@ public class WarriorTest {
 	@Test (expected = SkillIsntInSkillListException.class)	
 	public void creatingWarrior_WHEN_askingToRemoveSkillNotInList_THEN_anExceptionShouldBeThrown() {		
 		//Arrange
-		final ISkill SKILL_NOT_IN_LIST = new SkillMock();
+		final ISkill SKILL_NOT_IN_LIST = new SkillDummy();
 				
 		IFighter warrior = new Warrior(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 				
@@ -322,7 +343,7 @@ public class WarriorTest {
 	
 	@Test public void creatingValidWarrior_WHEN_askingHasSkillWithSkillHeHas_THEN_hasSkillReturnsTrue() {
 		//Arrange 
-		final ISkill SKILL1 = new SkillMock();
+		final ISkill SKILL1 = new SkillDummy();
 		IFighter warrior = new Warrior(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,SKILL1,ANY_SKILL);
 		
 		//Act
@@ -335,7 +356,7 @@ public class WarriorTest {
 		
 	@Test public void creatingValidWarrior_WHEN_askingHasSkillWithSkillHeDoesntHave_THEN_hasSkillReturnsFalse() {
 		//Arrange 
-		final ISkill SKILL1 = new SkillMock();
+		final ISkill SKILL1 = new SkillDummy();
 		IFighter warrior = new Warrior(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 		
 		//Act

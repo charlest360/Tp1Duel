@@ -22,7 +22,7 @@ public class AthleteTest {
 	final int ANY_DEXTERITY = 21;
 	final int ANY_INTELLECT = 21;
 	final int ANY_FOCUS = 21;
-	final ISkill ANY_SKILL = new SkillMock();
+	final ISkill ANY_SKILL = new SkillDummy();
 	
 	final int TOO_LOW_STRENGTH = Athlete.MINIMAL_STRENGTH -1;
 	final int TOO_LOW_DEXTERITY = Athlete.MINIMAL_DEXTERITY -1;
@@ -34,7 +34,12 @@ public class AthleteTest {
 	final int TOO_HIGH_INTELLECT = 200;
 	final int TOO_HIGH_FOCUS = 200;
 	
-	
+	@Test (expected = SumOfFightersAttributesIsTooHigh.class)	
+	public void creatingAthlete_WHEN_SumOfFightersAttributesHigherThanMaximalSumOfFightersAttributes_THEN_anExceptionShouldBeThrown() {		
+		//Act
+		@SuppressWarnings("unused")
+		Fighter fighter = new Athlete(ANY_NAME,TOO_HIGH_STRENGTH,TOO_HIGH_DEXTERITY,TOO_HIGH_INTELLECT,TOO_HIGH_FOCUS,ANY_SKILL,ANY_SKILL);
+	}
 	
 	@Test (expected = FighterStrengthIsNegativeException.class)	
 	public void creatingAthlete_WHEN_strengthIsNegative_THEN_anExceptionShouldBeThrown() {		
@@ -42,6 +47,7 @@ public class AthleteTest {
 		final int NEGATIVE_STRENGTH = -1;
 		
 		//Act
+		@SuppressWarnings("unused")
 		Fighter athlete= new Athlete(ANY_NAME,NEGATIVE_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -51,6 +57,7 @@ public class AthleteTest {
 		final int NEGATIVE_DEXTERITY = -1;
 		
 		//Act
+		@SuppressWarnings("unused")
 		Fighter athlete= new Athlete(ANY_NAME,ANY_STRENGTH,NEGATIVE_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -60,6 +67,7 @@ public class AthleteTest {
 		final int NEGATIVE_INTELLECT = -1;
 		
 		//Act
+		@SuppressWarnings("unused")
 		Fighter athlete= new Athlete(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,NEGATIVE_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -69,6 +77,7 @@ public class AthleteTest {
 		final int NEGATIVE_FOCUS = -1;
 		
 		//Act
+		@SuppressWarnings("unused")
 		Fighter athlete= new Athlete(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,NEGATIVE_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -77,24 +86,28 @@ public class AthleteTest {
 	@Test (expected = AthleteStrengthIsTooLowException.class)	
 	public void creatingAthlete_WHEN_strengthIsLowerThanTheMinimumOne_THEN_anExceptionShouldBeThrown() {		
 		//Act
+		@SuppressWarnings("unused")
 		Fighter athlete = new Athlete(ANY_NAME,TOO_LOW_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
 	@Test (expected = AthleteDexterityIsTooLowException.class)	
 	public void creatingAthlete_WHEN_dexterityIsLowerThanTheMinimumOne_THEN_anExceptionShouldBeThrown() {		
 		//Act
+		@SuppressWarnings("unused")
 		Fighter athlete = new Athlete(ANY_NAME,ANY_STRENGTH,TOO_LOW_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
 	@Test (expected = AthleteIntellectIsTooLowException.class)	
 	public void creatingAthlete_WHEN_intellectIsLowerThanTheMinimumOne_THEN_anExceptionShouldBeThrown() {		
 		//Act
+		@SuppressWarnings("unused")
 		Fighter athlete = new Athlete(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,TOO_LOW_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
 	@Test (expected = AthleteFocusIsTooLowException.class)	
 	public void creatingAthlete_WHEN_focusIsLowerThanTheMinimumOne_THEN_anExceptionShouldBeThrown() {		
 		//Act
+		@SuppressWarnings("unused")
 		Fighter athlete = new Athlete(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,TOO_LOW_FOCUS,ANY_SKILL,ANY_SKILL);
 	
 	}
@@ -165,7 +178,7 @@ public class AthleteTest {
 		final int ACTUAL_STRENGTH = athlete.getStrength();
 				
 		//Assert
-		assertEquals(EXPECTED_STRENGTH,EXPECTED_STRENGTH);
+		assertEquals(ACTUAL_STRENGTH,EXPECTED_STRENGTH);
 	}
 	
 	@Test public void creatingValidAthlete_WHEN_callingSetDexterity_THEN_theAthleteDexterityIsChanged() {
@@ -213,11 +226,6 @@ public class AthleteTest {
 		assertEquals(EXPECTED_FOCUS,ACTUAL_FOCUS);
 	}
 	
-	
-	
-	
-	//Autres tests
-	
 	@Test public void creatingValidAthlete_WHEN_callingGetHp_THEN_theHpReturnedMustRespectTheHpCalculationRule() {
 		//Arrange
 		Fighter athlete = new Athlete(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
@@ -243,13 +251,32 @@ public class AthleteTest {
 		//Assert
 		assertEquals(EXPECTED_HP,ACTUAL_HP);
 	}
+	
+	
+	@Test public void creatingValidAthlete_WHEN_callingSetHpWithHpHigherThanTheInitialHp_THEN_theHpMustTakeItsInitialValue() {
+		//Arrange
+		Fighter athlete = new Athlete(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+		final int INITIAL_HP = athlete.getHp();
+		athlete.setHp(INITIAL_HP-20);
+		//Act
+		
+		athlete.setHp(INITIAL_HP+10);
+		
+		final int ACTUAL_HP = athlete.getHp();
+		final int EXPECTED_HP = INITIAL_HP;
+		
+		//Assert
+		assertEquals(EXPECTED_HP,ACTUAL_HP);
+	}
+	
+	
 
 	//Tests methods related to skills
 	
 	@Test public void creatingValidAthlete_WHEN_callingGetSkillWithAnIndexOfZero_THEN_theFirstSkillIsReturned() {
 		//Arrange
-		final ISkill SKILL1 = new SkillMock();
-		final ISkill SKILL2 = new SkillMock();
+		final ISkill SKILL1 = new SkillDummy();
+		final ISkill SKILL2 = new SkillDummy();
 			
 		IFighter athlete = new Athlete(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,SKILL1,SKILL2);
 			
@@ -264,7 +291,7 @@ public class AthleteTest {
 		
 	@Test public void creatingValidAthlete_WHEN_addingSkill_THEN_theSkillIsAddedToTheList() {
 		//Arrange
-		final ISkill SKILL3 = new SkillMock();
+		final ISkill SKILL3 = new SkillDummy();
 			
 		IFighter athlete = new Athlete(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 			
@@ -282,8 +309,8 @@ public class AthleteTest {
 		
 	@Test public void creatingValidAthlete_WHEN_removingFirstSkill_THEN_secondSkillBecomesFirstSkill() {
 		//Arrange
-		final ISkill SKILL1 = new SkillMock();
-		final ISkill SKILL2 = new SkillMock();
+		final ISkill SKILL1 = new SkillDummy();
+		final ISkill SKILL2 = new SkillDummy();
 			
 		IFighter athlete = new Athlete(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,SKILL1,SKILL2);
 			
@@ -303,7 +330,7 @@ public class AthleteTest {
 	public void creatingAthlete_WHEN_askingToRemoveSkillNotInList_THEN_anExceptionShouldBeThrown() {		
 			
 		//Arrange
-		final ISkill SKILL_NOT_IN_LIST = new SkillMock();
+		final ISkill SKILL_NOT_IN_LIST = new SkillDummy();
 					
 		IFighter athlete = new Athlete(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 					
@@ -324,7 +351,7 @@ public class AthleteTest {
 	
 	@Test public void creatingValidAthlete_WHEN_askingHasSkillWithSkillHeHas_THEN_hasSkillReturnsTrue() {
 		//Arrange 
-		final ISkill SKILL1 = new SkillMock();
+		final ISkill SKILL1 = new SkillDummy();
 		IFighter athlete = new Athlete(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,SKILL1,ANY_SKILL);
 		
 		//Act
@@ -337,7 +364,7 @@ public class AthleteTest {
 	
 	@Test public void creatingValidAthlete_WHEN_askingHasSkillWithSkillHeDoesntHave_THEN_hasSkillReturnsFalse() {
 		//Arrange 
-		final ISkill SKILL1 = new SkillMock();
+		final ISkill SKILL1 = new SkillDummy();
 		IFighter athlete = new Athlete(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 		
 		//Act

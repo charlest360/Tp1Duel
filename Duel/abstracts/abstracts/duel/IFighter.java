@@ -7,16 +7,11 @@ public interface IFighter {
 	
 	public void setHp(int newHp);
 	
-	
 	public void addSkill(ISkill skill);
 	
 	public void removeSkill(ISkill skill);
 	
 	public ISkill getSkill(int index);
-	
-	//public int getIndexOfSkill(ISkill skill);
-	
-	 public int getCapacityPower(ISkill skill);
 
 	 public int getStrength();
 	 

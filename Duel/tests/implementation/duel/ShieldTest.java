@@ -38,7 +38,7 @@ public class ShieldTest {
 		//Arrange
 		
 		ISkill shield = new Shield(ANY_PROTECTION);
-		IFighter ANY_FIGHTER_MOCK = new FighterMock(ANY_NAME,ANY_FIGHTER_STRENGTH,ANY_POINTS,ANY_POINTS,ANY_POINTS,shield,shield);
+		IFighter ANY_FIGHTER_MOCK = new FighterStub(ANY_NAME,ANY_FIGHTER_STRENGTH,ANY_POINTS,ANY_POINTS,ANY_POINTS,shield,shield);
 		
 		
 		//Act

@@ -36,7 +36,7 @@ public class AttackSpellTest {
 		//Arrange
 		
 		ISkill attackSpell = new AttackSpell(ANY_EFFICACITY);
-		IFighter ANY_FIGHTER_MOCK = new FighterMock(ANY_NAME,ANY_POINTS,ANY_POINTS,ANY_FIGHTER_INTELLECT,ANY_POINTS,attackSpell,attackSpell);
+		IFighter ANY_FIGHTER_MOCK = new FighterStub(ANY_NAME,ANY_POINTS,ANY_POINTS,ANY_FIGHTER_INTELLECT,ANY_POINTS,attackSpell,attackSpell);
 		
 		
 		//Act

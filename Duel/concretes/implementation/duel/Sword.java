@@ -1,6 +1,5 @@
 package implementation.duel;
 
-import abstracts.duel.Fighter;
 import abstracts.duel.IAttack;
 import abstracts.duel.IFighter;
 import exceptions.duel.SwordImpactIsTooHighException;

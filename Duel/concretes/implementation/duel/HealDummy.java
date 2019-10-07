@@ -1,14 +1,13 @@
 package implementation.duel;
 
-import abstracts.duel.IAttack;
 import abstracts.duel.IFighter;
+import abstracts.duel.IHeal;
 
-public class AttackMock implements IAttack {
+public class HealDummy implements IHeal {
 
 	@Override
 	public int getCapacityPower(IFighter fighter) {
-		// TODO Auto-generated method stub
-		return 0;
+		return 10;
 	}
 
 }

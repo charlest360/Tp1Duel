@@ -16,12 +16,14 @@ public abstract class Fighter implements IFighter {
 	public final int MAXIMUM_SUM_OF_FIGHTERS_ATTRIBUTES = 100; 
 	public final static int CONSTANT_FOR_HP_CALCULATION = 200;
 	
+	@SuppressWarnings("unused")
 	private String name;
 	private int strength;
 	private int dexterity;
 	private int intellect;
 	private int focus;
 	private int hp;
+	private int initialHp;
 	private ArrayList<ISkill> skillList = new ArrayList<ISkill>();
 	
 	
@@ -73,7 +75,8 @@ public abstract class Fighter implements IFighter {
 	}
 	
 	protected void calculateInitialHp() {
-		this.hp = CONSTANT_FOR_HP_CALCULATION -this.strength -this.dexterity - this.intellect - this.focus;
+		this.initialHp = CONSTANT_FOR_HP_CALCULATION -this.strength -this.dexterity - this.intellect - this.focus;
+		this.hp = this.initialHp;
 	}
 	
 	public int getHp( ) {
@@ -81,7 +84,12 @@ public abstract class Fighter implements IFighter {
 	}
 	
 	public void setHp(int newHp) {
-		this.hp = newHp;
+		if (newHp > this.initialHp) {
+			this.hp = this.initialHp;
+		}
+		else {
+			this.hp = newHp;
+		}
 	}
 	
 	
@@ -115,22 +123,7 @@ public abstract class Fighter implements IFighter {
 		return false;
 	}
 	
-	/*public int getIndexOfSkill(ISkill skill) {
-		if(this.skillList.contains(skill)) {
-			return skillList.indexOf(skill);
-		}
-		else {
-			throw new SkillIsntInSkillListException();
-		}
-	}*/
-	
-	 public int getCapacityPower(ISkill skill) {
-		 return skill.getCapacityPower(this);
-	 }
-	/*QUAND ON ENLEVE POINTS ATTRIBUTS
-	 VALIDER QUE ATTRIBUTS >0 SINON
-	 ON ENLEVE SIMPLEMENT PAS
-	*/
+
 
 	 public int getStrength() {
 		 return this.strength;

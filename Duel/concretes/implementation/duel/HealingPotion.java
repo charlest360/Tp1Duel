@@ -1,6 +1,5 @@
 package implementation.duel;
 
-import abstracts.duel.Fighter;
 import abstracts.duel.IFighter;
 import abstracts.duel.IHeal;
 import exceptions.duel.HealingPotionEfficacityIsTooHighException;

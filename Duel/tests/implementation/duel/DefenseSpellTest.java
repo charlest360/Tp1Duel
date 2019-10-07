@@ -35,7 +35,7 @@ public class DefenseSpellTest {
 		//Arrange
 		
 		ISkill defenseSpell = new DefenseSpell(ANY_EFFICACITY);
-		IFighter ANY_FIGHTER_MOCK = new FighterMock(ANY_NAME,ANY_POINTS,ANY_POINTS,ANY_FIGHTER_INTELLECT,ANY_POINTS,defenseSpell,defenseSpell);
+		IFighter ANY_FIGHTER_MOCK = new FighterStub(ANY_NAME,ANY_POINTS,ANY_POINTS,ANY_FIGHTER_INTELLECT,ANY_POINTS,defenseSpell,defenseSpell);
 		
 		
 		//Act

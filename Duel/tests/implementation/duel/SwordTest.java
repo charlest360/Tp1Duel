@@ -38,7 +38,7 @@ public class SwordTest {
 		//Arrange
 		
 		ISkill sword = new Sword(ANY_IMPACT);
-		IFighter ANY_FIGHTER_MOCK = new FighterMock(ANY_NAME,ANY_FIGHTER_STRENGTH,ANY_POINTS,ANY_POINTS,ANY_POINTS,sword,sword);
+		IFighter ANY_FIGHTER_MOCK = new FighterStub(ANY_NAME,ANY_FIGHTER_STRENGTH,ANY_POINTS,ANY_POINTS,ANY_POINTS,sword,sword);
 		
 		
 		//Act

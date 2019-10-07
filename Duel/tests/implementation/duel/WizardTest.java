@@ -12,6 +12,7 @@ import exceptions.duel.FighterFocusIsNegativeException;
 import exceptions.duel.FighterIntellectIsNegativeException;
 import exceptions.duel.FighterStrengthIsNegativeException;
 import exceptions.duel.SkillIsntInSkillListException;
+import exceptions.duel.SumOfFightersAttributesIsTooHigh;
 import exceptions.duel.WizardFocusIsTooLowException;
 import exceptions.duel.WizardIntellectIsTooLowException;
 import exceptions.duel.indexOutOfBoundsOfSkillListException;
@@ -23,7 +24,7 @@ public class WizardTest {
 	final int ANY_DEXTERITY = 10;
 	final int ANY_INTELLECT = 30;
 	final int ANY_FOCUS = 30;
-	final ISkill ANY_SKILL = new SkillMock();
+	final ISkill ANY_SKILL = new SkillDummy();
 	
 	final int TOO_HIGH_STRENGTH = 200;
 	final int TOO_HIGH_DEXTERITY = 200;
@@ -33,13 +34,19 @@ public class WizardTest {
 	
 	//Tests des compétences aux valeurs négatives 
 	
+	@Test (expected = SumOfFightersAttributesIsTooHigh.class)	
+	public void createsWizard_WHEN_SumOfFightersAttributesHigherThanMaximalSumOfFightersAttributes_THEN_anExceptionShouldBeThrown() {		
+		//Act
+		Fighter fighter = new Wizard(ANY_NAME,TOO_HIGH_STRENGTH,TOO_HIGH_DEXTERITY,TOO_HIGH_INTELLECT,TOO_HIGH_FOCUS,ANY_SKILL,ANY_SKILL);
+	}
+	
 	@Test (expected = FighterStrengthIsNegativeException.class)	
 	public void creatingWizard_WHEN_strengthIsNegative_THEN_anExceptionShouldBeThrown() {		
 		//Arrange
 		final int NEGATIVE_STRENGTH = -1;
 		
 		//Act
-		Fighter wizard= new Wizard(ANY_NAME,NEGATIVE_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+		IFighter wizard= new Wizard(ANY_NAME,NEGATIVE_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
 	@Test (expected = FighterDexterityIsNegativeException.class)	
@@ -48,7 +55,7 @@ public class WizardTest {
 		final int NEGATIVE_DEXTERITY = -1;
 		
 		//Act
-		Fighter wizard= new Wizard(ANY_NAME,ANY_STRENGTH,NEGATIVE_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+		IFighter wizard= new Wizard(ANY_NAME,ANY_STRENGTH,NEGATIVE_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
 	@Test (expected = FighterIntellectIsNegativeException.class)	
@@ -57,7 +64,7 @@ public class WizardTest {
 		final int NEGATIVE_INTELLECT = -1;
 		
 		//Act
-		Fighter wizard= new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,NEGATIVE_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+		IFighter wizard= new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,NEGATIVE_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
 	@Test (expected = FighterFocusIsNegativeException.class)	
@@ -66,7 +73,7 @@ public class WizardTest {
 		final int NEGATIVE_FOCUS = -1;
 		
 		//Act
-		Fighter wizard= new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,NEGATIVE_FOCUS,ANY_SKILL,ANY_SKILL);
+		IFighter wizard= new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,NEGATIVE_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
 	
@@ -83,7 +90,7 @@ public class WizardTest {
 		final int TOO_LOW_INTELLECT = STRENGTH_HIGHER_THAN_DEXTERITY + Wizard.MIN_GAP_BETWEEN_INTELLECT_AND_HIGHEST_BETWEEN_STRENGTH_AND_DEXTERITY -1 ;
 		
 		//Act
-		Fighter wizard = new Wizard(ANY_NAME,STRENGTH_HIGHER_THAN_DEXTERITY,ANY_DEXTERITY,TOO_LOW_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+		IFighter wizard = new Wizard(ANY_NAME,STRENGTH_HIGHER_THAN_DEXTERITY,ANY_DEXTERITY,TOO_LOW_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
 	@Test (expected = WizardIntellectIsTooLowException.class)	
@@ -95,7 +102,7 @@ public class WizardTest {
 		final int TOO_LOW_INTELLECT = DEXTERITY_HIGHER_THAN_STRENGTH + Wizard.MIN_GAP_BETWEEN_INTELLECT_AND_HIGHEST_BETWEEN_STRENGTH_AND_DEXTERITY -1 ;
 		
 		//Act
-		Fighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,DEXTERITY_HIGHER_THAN_STRENGTH,TOO_LOW_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,DEXTERITY_HIGHER_THAN_STRENGTH,TOO_LOW_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
 	@Test (expected = WizardFocusIsTooLowException.class)	
@@ -107,7 +114,7 @@ public class WizardTest {
 		final int TOO_LOW_FOCUS = STRENGTH_HIGHER_THAN_DEXTERITY + Wizard.MIN_GAP_BETWEEN_INTELLECT_AND_HIGHEST_BETWEEN_STRENGTH_AND_DEXTERITY -1 ;
 		
 		//Act
-		Fighter wizard = new Wizard(ANY_NAME,STRENGTH_HIGHER_THAN_DEXTERITY,ANY_DEXTERITY,ANY_INTELLECT,TOO_LOW_FOCUS,ANY_SKILL,ANY_SKILL);
+		IFighter wizard = new Wizard(ANY_NAME,STRENGTH_HIGHER_THAN_DEXTERITY,ANY_DEXTERITY,ANY_INTELLECT,TOO_LOW_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
 	@Test (expected = WizardFocusIsTooLowException.class)	
@@ -119,17 +126,17 @@ public class WizardTest {
 		final int TOO_LOW_FOCUS = DEXTERITY_HIGHER_THAN_STRENGTH + Wizard.MIN_GAP_BETWEEN_INTELLECT_AND_HIGHEST_BETWEEN_STRENGTH_AND_DEXTERITY -1 ;
 		
 		//Act
-		Fighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,DEXTERITY_HIGHER_THAN_STRENGTH,ANY_INTELLECT,TOO_LOW_FOCUS,ANY_SKILL,ANY_SKILL);
+		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,DEXTERITY_HIGHER_THAN_STRENGTH,ANY_INTELLECT,TOO_LOW_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
 	
 	
-	//Tests Set/get des attributs des fighters
+	//Tests Set/get des attributs des Wizards
 	
 	@Test public void creatingValidWizard_WHEN_callingGetStrength_THEN_theWizardStrengthIsReturned() {
 		
 		//Arrange 
-		Fighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 			
 		//Act 
 		final int EXPECTED_STRENGTH = ANY_STRENGTH;
@@ -142,7 +149,7 @@ public class WizardTest {
 	@Test public void creatingValidWizard_WHEN_callingGetDexterity_THEN_theWizardDexterityIsReturned() {
 			
 		//Arrange 
-		Fighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 			
 		//Act 
 		final int EXPECTED_DEXTERITY = ANY_DEXTERITY;
@@ -155,7 +162,7 @@ public class WizardTest {
 	@Test public void creatingValidWizard_WHEN_callingGetIntellect_THEN_theWizardIntellectIsReturned() {
 			
 		//Arrange 
-		Fighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 			
 		//Act 
 		final int EXPECTED_INTELLECT = ANY_INTELLECT;
@@ -168,7 +175,7 @@ public class WizardTest {
 	@Test public void creatingValidWizard_WHEN_callingGetFocus_THEN_theWizardFocusIsReturned() {
 		
 	//Arrange 
-	Fighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 		
 	//Act 
 	final int EXPECTED_FOCUS = ANY_FOCUS;
@@ -181,7 +188,7 @@ public class WizardTest {
 	@Test public void creatingValidWizard_WHEN_callingSetStrength_THEN_theWizardStrengthIsChanged() {
 		
 		//Arrange 
-		Fighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 				
 		//Act 
 		wizard.setStrength(ANY_STRENGTH+1);
@@ -196,7 +203,7 @@ public class WizardTest {
 	@Test public void creatingValidWizard_WHEN_callingSetDexterity_THEN_theWizardDexterityIsChanged() {
 		
 		//Arrange 
-		Fighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 				
 		//Act 
 		wizard.setDexterity(ANY_DEXTERITY+1);
@@ -211,7 +218,7 @@ public class WizardTest {
 	@Test public void creatingValidWizard_WHEN_callingSetIntellect_THEN_theWizardIntellectIsChanged() {
 		
 		//Arrange 
-		Fighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 				
 		//Act 
 		wizard.setIntellect(ANY_INTELLECT+1);
@@ -226,7 +233,7 @@ public class WizardTest {
 	@Test public void creatingValidWizard_WHEN_callingSetFocus_THEN_theWizardFocusIsChanged() {
 		
 		//Arrange 
-		Fighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 				
 		//Act 
 		wizard.setFocus(ANY_FOCUS+1);
@@ -240,11 +247,11 @@ public class WizardTest {
 	
 	@Test public void creatingValidWizard_WHEN_callingGetHp_THEN_theHpReturnedMustRespectTheHpCalculationRule() {
 		//Arrange
-		Fighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 			
 		//Act
 		final int ACTUAL_HP = wizard.getHp();
-		final int EXPECTED_HP = Fighter.CONSTANT_FOR_HP_CALCULATION - ANY_STRENGTH - ANY_DEXTERITY - ANY_INTELLECT - ANY_FOCUS ;
+		final int EXPECTED_HP = Wizard.CONSTANT_FOR_HP_CALCULATION - ANY_STRENGTH - ANY_DEXTERITY - ANY_INTELLECT - ANY_FOCUS ;
 			
 		//Assert
 		assertEquals(EXPECTED_HP,ACTUAL_HP);
@@ -252,7 +259,7 @@ public class WizardTest {
 	
 	@Test public void creatingValidWizard_WHEN_callingSetHp_THEN_theHpMustChange() {
 		//Arrange
-		Fighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 		final int INITIAL_HP = wizard.getHp();
 		//Act
 		wizard.setHp(INITIAL_HP-1);
@@ -265,14 +272,30 @@ public class WizardTest {
 	}
 	
 	
+	@Test public void creatingValidWizard_WHEN_callingSetHpWithHpHigherThanTheInitialHp_THEN_theHpMustTakeItsInitialValue() {
+		//Arrange
+		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
+		final int INITIAL_HP = wizard.getHp();
+		wizard.setHp(INITIAL_HP-20);
+		//Act
+		
+		wizard.setHp(INITIAL_HP+10);
+		
+		final int ACTUAL_HP = wizard.getHp();
+		final int EXPECTED_HP = INITIAL_HP;
+		
+		//Assert
+		assertEquals(EXPECTED_HP,ACTUAL_HP);
+	}
+	
 	
 	
 	//Tests methods related to skills
 	
 	@Test public void creatingValidWizard_WHEN_callingGetSkillWithAnIndexOfZero_THEN_theFirstSkillIsReturned() {
 		//Arrange
-		final ISkill SKILL1 = new SkillMock();
-		final ISkill SKILL2 = new SkillMock();
+		final ISkill SKILL1 = new SkillDummy();
+		final ISkill SKILL2 = new SkillDummy();
 			
 		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,SKILL1,SKILL2);
 			
@@ -287,7 +310,7 @@ public class WizardTest {
 		
 	@Test public void creatingValidWizard_WHEN_addingSkill_THEN_theSkillIsAddedToTheList() {
 		//Arrange
-		final ISkill SKILL3 = new SkillMock();
+		final ISkill SKILL3 = new SkillDummy();
 			
 		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 			
@@ -305,8 +328,8 @@ public class WizardTest {
 		
 	@Test public void creatingValidWizard_WHEN_removingFirstSKill_THEN_secondSkillBecomesFirstSkill() {
 		//Arrange
-		final ISkill SKILL1 = new SkillMock();
-		final ISkill SKILL2 = new SkillMock();
+		final ISkill SKILL1 = new SkillDummy();
+		final ISkill SKILL2 = new SkillDummy();
 			
 		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,SKILL1,SKILL2);
 			
@@ -326,7 +349,7 @@ public class WizardTest {
 	public void creatingWizard_WHEN_askingToRemoveSkillNotInList_THEN_anExceptionShouldBeThrown() {		
 			
 		//Arrange
-		final ISkill SKILL_NOT_IN_LIST = new SkillMock();
+		final ISkill SKILL_NOT_IN_LIST = new SkillDummy();
 					
 		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 					
@@ -347,7 +370,7 @@ public class WizardTest {
 	
 	@Test public void creatingValidWizard_WHEN_askingHasSkillWithSkillHeHas_THEN_hasSkillReturnsTrue() {
 		//Arrange 
-		final ISkill SKILL1 = new SkillMock();
+		final ISkill SKILL1 = new SkillDummy();
 		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,SKILL1,ANY_SKILL);
 		
 		//Act
@@ -360,7 +383,7 @@ public class WizardTest {
 		
 	@Test public void creatingValidWizard_WHEN_askingHasSkillWithSkillHeDoesntHave_THEN_hasSkillReturnsFalse() {
 		//Arrange 
-		final ISkill SKILL1 = new SkillMock();
+		final ISkill SKILL1 = new SkillDummy();
 		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 		
 		//Act

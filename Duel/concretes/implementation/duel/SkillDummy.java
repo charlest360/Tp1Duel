@@ -4,9 +4,9 @@ package implementation.duel;
 import abstracts.duel.IFighter;
 import abstracts.duel.ISkill;
 
-public class SkillMock implements ISkill {
+public class SkillDummy implements ISkill {
 
-	public SkillMock() {
+	public SkillDummy() {
 		
 	}
 	

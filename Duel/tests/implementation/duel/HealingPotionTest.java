@@ -36,7 +36,7 @@ public class HealingPotionTest {
 		//Arrange
 		
 		ISkill potion = new HealingPotion(ANY_EFFICACITY);
-		IFighter ANY_FIGHTER_MOCK = new FighterMock(ANY_NAME,ANY_POINTS,ANY_FIGHTER_DEXTERITY,ANY_POINTS,ANY_POINTS,potion,potion);
+		IFighter ANY_FIGHTER_MOCK = new FighterStub(ANY_NAME,ANY_POINTS,ANY_FIGHTER_DEXTERITY,ANY_POINTS,ANY_POINTS,potion,potion);
 		
 		
 		//Act

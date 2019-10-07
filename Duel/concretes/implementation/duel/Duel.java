@@ -1,7 +1,7 @@
 package implementation.duel;
 
 import abstracts.duel.IAttack;
-import abstracts.duel.IDuel;
+
 import abstracts.duel.IFighter;
 import abstracts.duel.IRipost;
 import abstracts.duel.ISkill;
@@ -9,7 +9,7 @@ import exceptions.duel.AtackerDoesntHaveSpecifiedSkillException;
 import exceptions.duel.DefenderDoesntHaveSpecifiedSkillException;
 import exceptions.duel.FighterCannotDuelHimselfException;
 
-public class Duel implements IDuel {
+public class Duel {
 
 	//Attributs de Duel
 	private IFighter attacker;
@@ -19,7 +19,7 @@ public class Duel implements IDuel {
 	private int attackerSkillPower;
 	private int defenderSkillPower;
 	private int skillPowerDifference;
-	private boolean hasLoserSurrendered;
+	private boolean hasLoserSurrendered = false;
 	private IFighter winner;
 	private IFighter loser;
 	//Constantes
@@ -35,7 +35,7 @@ public class Duel implements IDuel {
 		
 		this.attacker = attacker;
 		this.attackerSkill = attackerSkill;
-		this.defenderSkillPower = attackerSkill.getCapacityPower(attacker);
+		this.defenderSkillPower = this.attackerSkill.getCapacityPower(attacker);
 		
 		this.defender = defender;
 	}
@@ -47,8 +47,6 @@ public class Duel implements IDuel {
 	}
 	
 	public void defenderRipost(IRipost defenderSkill) {
-		this.hasLoserSurrendered = false;
-		
 		chooseDefenderSkill(defenderSkill);
 		performFight();
 		
@@ -59,7 +57,7 @@ public class Duel implements IDuel {
 		validateDefenderSkill(defenderSkill);
 		
 		this.defenderSkill = defenderSkill;
-		this.defenderSkillPower = defenderSkill.getCapacityPower(this.defender);
+		this.defenderSkillPower = this.defenderSkill.getCapacityPower(this.defender);
 	}
 	private void validateAttackerSkill(IFighter attacker,IAttack attackerSkill) {
 		if (!(attacker.hasSkill(attackerSkill))) {
@@ -102,11 +100,18 @@ public class Duel implements IDuel {
 	}
 	
 	public void penalizeLoser() {	
-		this.loser.setStrength(this.winner.getStrength() - LOSER_ATTRIBUTES_DECREMENTATION_RATE);
-		this.loser.setDexterity(this.winner.getDexterity() - LOSER_ATTRIBUTES_DECREMENTATION_RATE);
-		this.loser.setIntellect(this.winner.getIntellect() - LOSER_ATTRIBUTES_DECREMENTATION_RATE);
-		this.loser.setFocus(this.winner.getFocus() - LOSER_ATTRIBUTES_DECREMENTATION_RATE);
-		
+		if (this.loser.getStrength()>0) {
+			this.loser.setStrength(this.loser.getStrength() - LOSER_ATTRIBUTES_DECREMENTATION_RATE);
+		}
+		if (this.loser.getDexterity() > 0) {
+			this.loser.setDexterity(this.loser.getDexterity() - LOSER_ATTRIBUTES_DECREMENTATION_RATE);
+		}
+		if(this.loser.getIntellect() > 0) {
+			this.loser.setIntellect(this.loser.getIntellect() - LOSER_ATTRIBUTES_DECREMENTATION_RATE);
+		}
+		if(this.loser.getFocus() > 0) {
+			this.loser.setFocus(this.loser.getFocus() - LOSER_ATTRIBUTES_DECREMENTATION_RATE);
+		}
 		if (!(this.hasLoserSurrendered)) {
 			this.loser.setHp(this.loser.getHp() -this.skillPowerDifference);
 		}	

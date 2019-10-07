@@ -5,26 +5,31 @@ import java.util.ArrayList;
 import abstracts.duel.IFighter;
 import abstracts.duel.ISkill;
 
-public class FighterMock implements IFighter  {
+public class FighterStub implements IFighter  {
 	
+	//Ici , la variable contient le nb d'appel des setter d'attributs pour Strength,Dexterity,Intellect,Focus et Hp.
+	//Lors de la victoire d'un fighter, le nb d'appel devrait etre à 4 et lors d'une défaite à 5.
+	public int nbOfAttributesSettingFunctionCalls = 0; 
+	
+	@SuppressWarnings("unused")
 	private String name;
 	private int strength;
 	private int dexterity;
 	private int intellect;
+	@SuppressWarnings("unused")
 	private int focus;
+	@SuppressWarnings("unused")
 	private int hp;
 	private ArrayList<ISkill> skillList = new ArrayList<ISkill>();
 	
-	public final int NB_OF_ATTRIBUTES_WINNER_INCREMENTS = 4; //Strength,Dexterity,Intellect and Focus
-	public final int NB_OF_ATTRIBUTES_LOSER_DECREMENTS = 5; //Strength,Dexterity,Intellect,Focus and Hp
+	public static final int NB_OF_ATTRIBUTES_WINNER_INCREMENTS = 4; //Strength,Dexterity,Intellect and Focus
+	public static final int NB_OF_ATTRIBUTES_LOSER_DECREMENTS = 5; //Strength,Dexterity,Intellect,Focus and Hp
+	public static final int NB_OF_ATTRIBUTES_LOSER_THAT_SURRENDER_DECREMENTS = NB_OF_ATTRIBUTES_LOSER_DECREMENTS -1;
+	
+
 	
 	
-	//Ici , la variable contient le nb d'appel des setter d'attributs pour Strength,Dexterity,Intellect,Focus et Hp.
-	//Lors de la victoire d'un fighter, le nb d'appel devrait etre à 4 et lors d'une défaite à 5.
-	public static int NB_OF_ATTRIBUTES_SETTING_FUNCTIONS_CALL = 0; 
-	
-	
-	public FighterMock(String name,int strength, int dexterity, int intellect, int focus,ISkill skill1,ISkill skill2) {
+	public FighterStub(String name,int strength, int dexterity, int intellect, int focus,ISkill skill1,ISkill skill2) {
 		this.name = name;
 		this.strength = strength;
 		this.dexterity =dexterity;
@@ -54,35 +59,43 @@ public class FighterMock implements IFighter  {
 	}
 	
 	@Override
+	public int getFocus() {
+		return this.focus;
+	}
+	
+	@Override
 	public boolean hasSkill(ISkill skill) {
 		return true;
 	}
 	
 	@Override
 	public void setStrength(int newStrength) {
-		// TODO Auto-generated method stub
-		
+		nbOfAttributesSettingFunctionCalls++;		
 	}
 
 	@Override
 	public void setDexterity(int newDexterity) {
-		// TODO Auto-generated method stub
+		nbOfAttributesSettingFunctionCalls++;	
 		
 	}
 
 	@Override
 	public void setIntellect(int newIntellect) {
-		// TODO Auto-generated method stub
+		nbOfAttributesSettingFunctionCalls++;	
 		
 	}
 	
 	@Override
 	public void setFocus(int newFocus) {
-		// TODO Auto-generated method stub
+		nbOfAttributesSettingFunctionCalls++;	
 		
 	}
 	
-	
+	@Override
+	public void setHp(int newHp) {
+		nbOfAttributesSettingFunctionCalls++;	
+	}
+
 	
 	
 	//Methods unused for tests 
@@ -93,11 +106,6 @@ public class FighterMock implements IFighter  {
 		return 0;
 	}
 
-	@Override
-	public void setHp(int newHp) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public void addSkill(ISkill skill) {
@@ -119,19 +127,9 @@ public class FighterMock implements IFighter  {
 
 	
 
-	@Override
-	public int getCapacityPower(ISkill skill) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 	
 
-	@Override
-	public int getFocus() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 
 
 

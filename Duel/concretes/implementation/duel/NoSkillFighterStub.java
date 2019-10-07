@@ -3,10 +3,10 @@ package implementation.duel;
 import abstracts.duel.IFighter;
 import abstracts.duel.ISkill;
 
-public class NoSkillFighterMock implements IFighter {
+public class NoSkillFighterStub implements IFighter {
 	
 	
-	public NoSkillFighterMock() {
+	public NoSkillFighterStub() {
 		
 	}
 	
@@ -48,10 +48,7 @@ public class NoSkillFighterMock implements IFighter {
 		return null;
 	}
 
-	@Override
-	public int getCapacityPower(ISkill skill) {
-		return 0;
-	}
+	
 
 	@Override
 	public int getStrength() {
