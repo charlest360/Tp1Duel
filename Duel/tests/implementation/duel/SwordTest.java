@@ -24,12 +24,14 @@ public class SwordTest {
 	@Test (expected = SwordImpactIsTooLowException.class)	
 	public void creatingSword_WHEN_impactIsToLow_THEN_anExceptionShouldBeThrown() {		
 		//Act
+		@SuppressWarnings("unused")
 		ISkill sword = new Sword(TOO_LOW_IMPACT);
 	}
 	
 	@Test (expected = SwordImpactIsTooHighException.class)	
 	public void creatingSword_WHEN_impactIsToHigh_THEN_anExceptionShouldBeThrown() {		
 		//Act
+		@SuppressWarnings("unused")
 		ISkill sword = new Sword(TOO_HIGH_IMPACT);
 	}
 	

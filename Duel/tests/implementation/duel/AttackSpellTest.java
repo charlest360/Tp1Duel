@@ -22,12 +22,14 @@ public class AttackSpellTest {
 	@Test (expected = SpellEfficacityIsTooLowException.class)	
 	public void creatingAttackSpell_WHEN_efficacityIsToLow_THEN_anExceptionShouldBeThrown() {		
 		//Act
+		@SuppressWarnings("unused")
 		ISkill attackSpell = new AttackSpell(TOO_LOW_EFFICACITY);
 	}
 	
 	@Test (expected = SpellEfficacityIsTooHighException.class)	
 	public void creatingAttackSpell_WHEN_efficacityIsToHigh_THEN_anExceptionShouldBeThrown() {		
 		//Act
+		@SuppressWarnings("unused")
 		ISkill attackSpell = new AttackSpell(TOO_HIGH_EFFICACITY);
 	}
 	

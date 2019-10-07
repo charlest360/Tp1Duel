@@ -37,6 +37,7 @@ public class WizardTest {
 	@Test (expected = SumOfFightersAttributesIsTooHigh.class)	
 	public void createsWizard_WHEN_SumOfFightersAttributesHigherThanMaximalSumOfFightersAttributes_THEN_anExceptionShouldBeThrown() {		
 		//Act
+		@SuppressWarnings("unused")
 		Fighter fighter = new Wizard(ANY_NAME,TOO_HIGH_STRENGTH,TOO_HIGH_DEXTERITY,TOO_HIGH_INTELLECT,TOO_HIGH_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -46,6 +47,7 @@ public class WizardTest {
 		final int NEGATIVE_STRENGTH = -1;
 		
 		//Act
+		@SuppressWarnings("unused")
 		IFighter wizard= new Wizard(ANY_NAME,NEGATIVE_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -55,6 +57,7 @@ public class WizardTest {
 		final int NEGATIVE_DEXTERITY = -1;
 		
 		//Act
+		@SuppressWarnings("unused")
 		IFighter wizard= new Wizard(ANY_NAME,ANY_STRENGTH,NEGATIVE_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -64,6 +67,7 @@ public class WizardTest {
 		final int NEGATIVE_INTELLECT = -1;
 		
 		//Act
+		@SuppressWarnings("unused")
 		IFighter wizard= new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,NEGATIVE_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -73,6 +77,7 @@ public class WizardTest {
 		final int NEGATIVE_FOCUS = -1;
 		
 		//Act
+		@SuppressWarnings("unused")
 		IFighter wizard= new Wizard(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,NEGATIVE_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -90,6 +95,7 @@ public class WizardTest {
 		final int TOO_LOW_INTELLECT = STRENGTH_HIGHER_THAN_DEXTERITY + Wizard.MIN_GAP_BETWEEN_INTELLECT_AND_HIGHEST_BETWEEN_STRENGTH_AND_DEXTERITY -1 ;
 		
 		//Act
+		@SuppressWarnings("unused")
 		IFighter wizard = new Wizard(ANY_NAME,STRENGTH_HIGHER_THAN_DEXTERITY,ANY_DEXTERITY,TOO_LOW_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -102,6 +108,7 @@ public class WizardTest {
 		final int TOO_LOW_INTELLECT = DEXTERITY_HIGHER_THAN_STRENGTH + Wizard.MIN_GAP_BETWEEN_INTELLECT_AND_HIGHEST_BETWEEN_STRENGTH_AND_DEXTERITY -1 ;
 		
 		//Act
+		@SuppressWarnings("unused")
 		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,DEXTERITY_HIGHER_THAN_STRENGTH,TOO_LOW_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -109,11 +116,11 @@ public class WizardTest {
 	public void createsWizardWithStrengthHigherThanDexterity_WHEN_focusLowerThanStrengthPlusTheirMinimalGap_THEN_anExceptionShouldBeThrown() {		
 		
 		//Arrange
-		
 		final int STRENGTH_HIGHER_THAN_DEXTERITY = ANY_DEXTERITY+1;
 		final int TOO_LOW_FOCUS = STRENGTH_HIGHER_THAN_DEXTERITY + Wizard.MIN_GAP_BETWEEN_INTELLECT_AND_HIGHEST_BETWEEN_STRENGTH_AND_DEXTERITY -1 ;
 		
 		//Act
+		@SuppressWarnings("unused")
 		IFighter wizard = new Wizard(ANY_NAME,STRENGTH_HIGHER_THAN_DEXTERITY,ANY_DEXTERITY,ANY_INTELLECT,TOO_LOW_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -126,6 +133,7 @@ public class WizardTest {
 		final int TOO_LOW_FOCUS = DEXTERITY_HIGHER_THAN_STRENGTH + Wizard.MIN_GAP_BETWEEN_INTELLECT_AND_HIGHEST_BETWEEN_STRENGTH_AND_DEXTERITY -1 ;
 		
 		//Act
+		@SuppressWarnings("unused")
 		IFighter wizard = new Wizard(ANY_NAME,ANY_STRENGTH,DEXTERITY_HIGHER_THAN_STRENGTH,ANY_INTELLECT,TOO_LOW_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -197,7 +205,7 @@ public class WizardTest {
 		final int ACTUAL_STRENGTH = wizard.getStrength();
 				
 		//Assert
-		assertEquals(EXPECTED_STRENGTH,EXPECTED_STRENGTH);
+		assertEquals(ACTUAL_STRENGTH,EXPECTED_STRENGTH);
 	}
 	
 	@Test public void creatingValidWizard_WHEN_callingSetDexterity_THEN_theWizardDexterityIsChanged() {

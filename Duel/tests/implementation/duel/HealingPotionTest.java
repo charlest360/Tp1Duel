@@ -22,12 +22,14 @@ public class HealingPotionTest {
 	@Test (expected = HealingPotionEfficacityIsTooLowException.class)	
 	public void creatingHealingPotion_WHEN_impactIsToLow_THEN_anExceptionShouldBeThrown() {		
 		//Act
+		@SuppressWarnings("unused")
 		ISkill potion = new HealingPotion(TOO_LOW_EFFICACITY);
 	}
 	
 	@Test (expected = HealingPotionEfficacityIsTooHighException.class)	
 	public void creatingHealingPotion_WHEN_impactIsToHigh_THEN_anExceptionShouldBeThrown() {		
 		//Act
+		@SuppressWarnings("unused")
 		ISkill potion = new HealingPotion(TOO_HIGH_EFFICACITY);
 	}
 	

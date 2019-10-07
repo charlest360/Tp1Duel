@@ -20,6 +20,7 @@ public class DefenseSpellTest {
 	@Test (expected = SpellEfficacityIsTooLowException.class)	
 	public void creatingDefenseSpell_WHEN_efficacityIsToLow_THEN_anExceptionShouldBeThrown() {		
 		//Act
+		@SuppressWarnings("unused")
 		ISkill defenseSpell = new DefenseSpell(TOO_LOW_EFFICACITY);
 	}
 	
@@ -27,6 +28,7 @@ public class DefenseSpellTest {
 	@Test (expected = SpellEfficacityIsTooHighException.class)	
 	public void creatingDefenseSpell_WHEN_efficacityIsToHigh_THEN_anExceptionShouldBeThrown() {		
 		//Act
+		@SuppressWarnings("unused")
 		ISkill defenseSpell = new DefenseSpell(TOO_HIGH_EFFICACITY);
 	}
 

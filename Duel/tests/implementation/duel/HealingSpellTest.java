@@ -21,6 +21,7 @@ public class HealingSpellTest {
 	@Test (expected = SpellEfficacityIsTooLowException.class)	
 	public void creatingHealingSpell_WHEN_efficacityIsToLow_THEN_anExceptionShouldBeThrown() {		
 		//Act
+		@SuppressWarnings("unused")
 		ISkill healingSpell = new HealingSpell(TOO_LOW_EFFICACITY);
 	}
 	
@@ -28,6 +29,7 @@ public class HealingSpellTest {
 	@Test (expected = SpellEfficacityIsTooHighException.class)	
 	public void creatingHealingSpell_WHEN_efficacityIsToHigh_THEN_anExceptionShouldBeThrown() {		
 		//Act
+		@SuppressWarnings("unused")
 		ISkill healingSpell = new HealingSpell(TOO_HIGH_EFFICACITY);
 	}
 	

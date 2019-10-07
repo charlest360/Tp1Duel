@@ -24,12 +24,14 @@ public class ShieldTest {
 	@Test (expected = ShieldProtectionIsTooLowException.class)	
 	public void creatingShield_WHEN_protectionIsToLow_THEN_anExceptionShouldBeThrown() {		
 		//Act
+		@SuppressWarnings("unused")
 		ISkill Shield = new Shield(TOO_LOW_PROTECTION);
 	}
 	
 	@Test (expected = ShieldProtectionIsTooHighException.class)	
 	public void creatingShield_WHEN_protectionIsToHigh_THEN_anExceptionShouldBeThrown() {		
 		//Act
+		@SuppressWarnings("unused")
 		ISkill Shield = new Shield(TOO_HIGH_PROTECTION);
 	}
 	

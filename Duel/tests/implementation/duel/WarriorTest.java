@@ -31,6 +31,7 @@ public class WarriorTest {
 	@Test (expected = SumOfFightersAttributesIsTooHigh.class)	
 	public void creatingWarrior_WHEN_SumOfFightersAttributesHigherThanMaximalSumOfFightersAttributes_THEN_anExceptionShouldBeThrown() {		
 		//Act
+		@SuppressWarnings("unused")
 		Fighter fighter = new Warrior(ANY_NAME,TOO_HIGH_STRENGTH,TOO_HIGH_DEXTERITY,TOO_HIGH_INTELLECT,TOO_HIGH_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -40,6 +41,7 @@ public class WarriorTest {
 		final int NEGATIVE_STRENGTH = -1;
 		
 		//Act
+		@SuppressWarnings("unused")
 		IFighter warrior= new Warrior(ANY_NAME,NEGATIVE_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -49,6 +51,7 @@ public class WarriorTest {
 		final int NEGATIVE_DEXTERITY = -1;
 		
 		//Act
+		@SuppressWarnings("unused")
 		IFighter warrior= new Warrior(ANY_NAME,ANY_STRENGTH,NEGATIVE_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -58,6 +61,7 @@ public class WarriorTest {
 		final int NEGATIVE_INTELLECT = -1;
 		
 		//Act
+		@SuppressWarnings("unused")
 		IFighter warrior= new Warrior(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,NEGATIVE_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -67,6 +71,7 @@ public class WarriorTest {
 		final int NEGATIVE_FOCUS = -1;
 		
 		//Act
+		@SuppressWarnings("unused")
 		IFighter warrior= new Warrior(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,ANY_INTELLECT,NEGATIVE_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -76,6 +81,7 @@ public class WarriorTest {
 		//Arrange
 		final int TOO_LOW_STRENGTH  = MINIMUM_DEXTERITY+Warrior.MIN_GAP_BETWEEN_STRENGTH_AND_DEXTERITY -1;
 		//Act
+		@SuppressWarnings("unused")
 		IFighter warrior = new Warrior(ANY_NAME,TOO_LOW_STRENGTH,MINIMUM_DEXTERITY,MINIMUM_INTELLECT,MINIMUM_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -84,6 +90,7 @@ public class WarriorTest {
 		//Arrange
 		final int TOO_LOW_STRENGTH  =MINIMUM_INTELLECT + Warrior.MIN_GAP_BETWEEN_STRENGTH_AND_INTELLECT - 1;
 		//Act
+		@SuppressWarnings("unused")
 		IFighter warrior = new Warrior(ANY_NAME,TOO_LOW_STRENGTH,MINIMUM_DEXTERITY,MINIMUM_INTELLECT,MINIMUM_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -92,6 +99,7 @@ public class WarriorTest {
 		//Arrange
 		final int TOO_LOW_DEXTERITY  =ANY_INTELLECT-1;
 		//Act
+		@SuppressWarnings("unused")
 		IFighter warrior = new Warrior(ANY_NAME,ANY_STRENGTH,TOO_LOW_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -100,6 +108,7 @@ public class WarriorTest {
 		//Arrange
 		final int TOO_LOW_DEXTERITY  =ANY_FOCUS-Warrior.MIN_GAP_BETWEEN_DEXTERITY_AND_FOCUS-1;
 		//Act
+		@SuppressWarnings("unused")
 		IFighter warrior = new Warrior(ANY_NAME,ANY_STRENGTH,TOO_LOW_DEXTERITY,ANY_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -108,6 +117,7 @@ public class WarriorTest {
 		//Arrange
 		final int TOO_LOW_INTELLECT  =ANY_FOCUS-Warrior.MIN_GAP_BETWEEN_DEXTERITY_AND_FOCUS-1;
 		//Act
+		@SuppressWarnings("unused")
 		IFighter warrior = new Warrior(ANY_NAME,ANY_STRENGTH,ANY_DEXTERITY,TOO_LOW_INTELLECT,ANY_FOCUS,ANY_SKILL,ANY_SKILL);
 	}
 	
@@ -177,7 +187,7 @@ public class WarriorTest {
 		final int ACTUAL_STRENGTH = warrior.getStrength();
 				
 		//Assert
-		assertEquals(EXPECTED_STRENGTH,EXPECTED_STRENGTH);
+		assertEquals(ACTUAL_STRENGTH,EXPECTED_STRENGTH);
 	}
 	
 	@Test public void creatingValidWarrior_WHEN_callingSetDexterity_THEN_theWarriorDexterityIsChanged() {
