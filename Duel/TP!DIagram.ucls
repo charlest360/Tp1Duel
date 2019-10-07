@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.3" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="implementation.duel.SkillDummy" project="Duel" 
-    file="/Duel/concretes/implementation/duel/SkillDummy.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="1" language="java" name="implementation.duel.SkillDummy" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/concretes/implementation/duel/SkillDummy.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="106" width="200" x="3653" y="411"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -10,8 +10,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="2" language="java" name="abstracts.duel.IRipost" project="Duel" 
-    file="/Duel/abstracts/abstracts/duel/IRipost.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="2" language="java" name="abstracts.duel.IRipost" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/abstracts/abstracts/duel/IRipost.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="70" width="120" x="2208" y="1440"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -19,8 +19,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="3" language="java" name="implementation.duel.Sword" project="Duel" 
-    file="/Duel/concretes/implementation/duel/Sword.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="3" language="java" name="implementation.duel.Sword" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/concretes/implementation/duel/Sword.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="142" width="209" x="2410" y="1440"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -28,8 +28,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="implementation.duel.HealDummy" project="Duel" 
-    file="/Duel/concretes/implementation/duel/HealDummy.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="4" language="java" name="implementation.duel.HealDummy" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/concretes/implementation/duel/HealDummy.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="106" width="200" x="3360" y="1078"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -37,8 +37,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="implementation.duel.AttackSpell" project="Duel" 
-    file="/Duel/concretes/implementation/duel/AttackSpell.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="5" language="java" name="implementation.duel.AttackSpell" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/concretes/implementation/duel/AttackSpell.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="106" width="200" x="3120" y="1078"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -46,8 +46,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="implementation.duel.Infirmary" project="Duel" 
-    file="/Duel/concretes/implementation/duel/Infirmary.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="6" language="java" name="implementation.duel.Infirmary" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/concretes/implementation/duel/Infirmary.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1504" y="451"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -55,8 +55,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="implementation.duel.Wizard" project="Duel" 
-    file="/Duel/concretes/implementation/duel/Wizard.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="7" language="java" name="implementation.duel.Wizard" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/concretes/implementation/duel/Wizard.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="160" width="606" x="4133" y="1078"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -64,8 +64,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="implementation.duel.simulator" project="Duel" 
-    file="/Duel/concretes/implementation/duel/simulator.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="8" language="java" name="implementation.duel.simulator" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/concretes/implementation/duel/simulator.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1796" y="432"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -73,8 +73,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="implementation.duel.FighterWinnerStub" project="Duel" 
-    file="/Duel/concretes/implementation/duel/FighterWinnerStub.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="9" language="java" name="implementation.duel.FighterWinnerStub" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/concretes/implementation/duel/FighterWinnerStub.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2988" y="565"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -82,8 +83,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="implementation.duel.Shield" project="Duel" 
-    file="/Duel/concretes/implementation/duel/Shield.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="10" language="java" name="implementation.duel.Shield" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/concretes/implementation/duel/Shield.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="142" width="209" x="1959" y="1440"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -91,8 +92,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="implementation.duel.PowerfulWeaponStub" project="Duel" 
-    file="/Duel/concretes/implementation/duel/PowerfulWeaponStub.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="11" language="java" name="implementation.duel.PowerfulWeaponStub" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/concretes/implementation/duel/PowerfulWeaponStub.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
     <position height="106" width="200" x="2659" y="1440"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -100,8 +102,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="12" language="java" name="abstracts.duel.IParry" project="Duel" 
-    file="/Duel/abstracts/abstracts/duel/IParry.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="12" language="java" name="abstracts.duel.IParry" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/abstracts/abstracts/duel/IParry.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="70" width="120" x="2227" y="1622"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -109,8 +111,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="13" language="java" name="abstracts.duel.IFighter" project="Duel" 
-    file="/Duel/abstracts/abstracts/duel/IFighter.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="13" language="java" name="abstracts.duel.IFighter" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/abstracts/abstracts/duel/IFighter.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="322" width="157" x="2389" y="1078"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -118,8 +120,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="14" language="java" name="implementation.duel.RipostDummy" project="Duel" 
-    file="/Duel/concretes/implementation/duel/RipostDummy.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="14" language="java" name="implementation.duel.RipostDummy" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/concretes/implementation/duel/RipostDummy.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="106" width="200" x="1987" y="1078"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -127,8 +129,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="implementation.duel.FighterStub" project="Duel" 
-    file="/Duel/concretes/implementation/duel/FighterStub.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="15" language="java" name="implementation.duel.FighterStub" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/concretes/implementation/duel/FighterStub.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="520" width="449" x="3164" y="411"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -136,8 +138,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="16" language="java" name="abstracts.duel.ISkill" project="Duel" 
-    file="/Duel/abstracts/abstracts/duel/ISkill.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="16" language="java" name="abstracts.duel.ISkill" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/abstracts/abstracts/duel/ISkill.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="124" width="233" x="2607" y="1078"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -145,8 +147,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="17" language="java" name="implementation.duel.Duel" project="Duel" 
-    file="/Duel/concretes/implementation/duel/Duel.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="17" language="java" name="implementation.duel.Duel" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/concretes/implementation/duel/Duel.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2078" y="555"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -154,8 +156,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="18" language="java" name="abstracts.duel.IAttack" project="Duel" 
-    file="/Duel/abstracts/abstracts/duel/IAttack.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="18" language="java" name="abstracts.duel.IAttack" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/abstracts/abstracts/duel/IAttack.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="70" width="120" x="2639" y="1622"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -163,8 +165,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="19" language="java" name="abstracts.duel.Spell" project="Duel" 
-    file="/Duel/abstracts/abstracts/duel/Spell.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="19" language="java" name="abstracts.duel.Spell" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/abstracts/abstracts/duel/Spell.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="141" width="202" x="3893" y="411"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -172,8 +174,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="20" language="java" name="abstracts.duel.Fighter" project="Duel" 
-    file="/Duel/abstracts/abstracts/duel/Fighter.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="20" language="java" name="abstracts.duel.Fighter" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/abstracts/abstracts/duel/Fighter.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="627" width="325" x="4135" y="411"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -181,8 +183,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="21" language="java" name="implementation.duel.Athlete" project="Duel" 
-    file="/Duel/concretes/implementation/duel/Athlete.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="21" language="java" name="implementation.duel.Athlete" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/concretes/implementation/duel/Athlete.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="232" width="245" x="4779" y="1078"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -190,8 +192,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="22" language="java" name="implementation.duel.FighterToHealStub" project="Duel" 
-    file="/Duel/concretes/implementation/duel/FighterToHealStub.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="22" language="java" name="implementation.duel.FighterToHealStub" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/concretes/implementation/duel/FighterToHealStub.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2455" y="551"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -199,8 +202,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="23" language="java" name="implementation.duel.HealingPotion" project="Duel" 
-    file="/Duel/concretes/implementation/duel/HealingPotion.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="23" language="java" name="implementation.duel.HealingPotion" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/concretes/implementation/duel/HealingPotion.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="142" width="253" x="3600" y="1078"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -208,8 +211,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="24" language="java" name="implementation.duel.Warrior" project="Duel" 
-    file="/Duel/concretes/implementation/duel/Warrior.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="24" language="java" name="implementation.duel.Warrior" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/concretes/implementation/duel/Warrior.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="214" width="363" x="5064" y="1078"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -217,8 +220,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="25" language="java" name="abstracts.duel.IHeal" project="Duel" 
-    file="/Duel/abstracts/abstracts/duel/IHeal.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="25" language="java" name="abstracts.duel.IHeal" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/abstracts/abstracts/duel/IHeal.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="70" width="120" x="3365" y="1440"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -226,8 +229,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="26" language="java" name="implementation.duel.AttackDummy" project="Duel" 
-    file="/Duel/concretes/implementation/duel/AttackDummy.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="26" language="java" name="implementation.duel.AttackDummy" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/concretes/implementation/duel/AttackDummy.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="106" width="200" x="2899" y="1440"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -235,8 +238,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="27" language="java" name="implementation.duel.DefenseSpell" project="Duel" 
-    file="/Duel/concretes/implementation/duel/DefenseSpell.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="27" language="java" name="implementation.duel.DefenseSpell" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/concretes/implementation/duel/DefenseSpell.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="106" width="200" x="2880" y="1078"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -244,8 +247,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="28" language="java" name="implementation.duel.NoSkillFighterStub" project="Duel" 
-    file="/Duel/concretes/implementation/duel/NoSkillFighterStub.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="28" language="java" name="implementation.duel.NoSkillFighterStub" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/concretes/implementation/duel/NoSkillFighterStub.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="2715" y="511"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -253,8 +257,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="29" language="java" name="implementation.duel.HealingSpell" project="Duel" 
-    file="/Duel/concretes/implementation/duel/HealingSpell.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="29" language="java" name="implementation.duel.HealingSpell" project="Duel-TremblayCharles" 
+    file="/Duel-TremblayCharles/concretes/implementation/duel/HealingSpell.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="106" width="200" x="3893" y="1078"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -262,191 +266,227 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <generalization id="30">    
+  <realization id="30">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="25"/>  
+  </realization>  
+  <generalization id="31">    
     <end type="SOURCE" refId="27"/>    
     <end type="TARGET" refId="19"/>  
   </generalization>  
-  <association id="31">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="32" name="winner"/>      
-      <multiplicity id="33" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="34">    
+  <association id="32">    
     <bendpoint x="2217" y="1078"/>    
     <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="35" name="defenderSkill"/>      
-      <multiplicity id="36" minimum="0" maximum="1"/>    
+      <attribute id="33" name="defenderSkill">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="34" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="37">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="20"/>  
-  </generalization>  
-  <realization id="38">    
-    <end type="SOURCE" refId="29"/>    
-    <end type="TARGET" refId="25"/>  
+  <realization id="35">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="18"/>  
   </realization>  
-  <realization id="39">    
-    <end type="SOURCE" refId="22"/>    
+  <realization id="36">    
+    <end type="SOURCE" refId="28"/>    
     <end type="TARGET" refId="13"/>  
   </realization>  
-  <generalization id="40">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="16"/>  
-  </generalization>  
-  <generalization id="41">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="2"/>  
-  </generalization>  
-  <realization id="42">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="2"/>  
-  </realization>  
-  <association id="43">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="44" name="defender"/>      
-      <multiplicity id="45" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="46">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="13"/>  
-  </realization>  
-  <realization id="47">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="16"/>  
-  </realization>  
-  <generalization id="48">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="20"/>  
-  </generalization>  
-  <realization id="49">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="16"/>  
-  </realization>  
-  <realization id="50">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="13"/>  
-  </realization>  
-  <generalization id="51">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="2"/>  
-  </generalization>  
-  <realization id="52">    
-    <bendpoint x="2379" y="1440"/>    
-    <end type="SOURCE" refId="27"/>    
-    <end type="TARGET" refId="12"/>  
-  </realization>  
-  <association id="53">    
+  <association id="37">    
     <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="54" name="skillList"/>      
-      <multiplicity id="55" minimum="0" maximum="2147483647"/>    
+      <attribute id="38" name="skillList">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="39" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="16" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="56">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="57" name="skillList"/>      
-      <multiplicity id="58" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="59">    
+  <generalization id="40">    
     <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="16"/>  
   </generalization>  
-  <realization id="60">    
+  <association id="41">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="42" name="skillList">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="43" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="44">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <realization id="45">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="2"/>  
+  </realization>  
+  <realization id="46">    
     <bendpoint x="3129" y="1440"/>    
     <end type="SOURCE" refId="5"/>    
     <end type="TARGET" refId="18"/>  
   </realization>  
-  <realization id="61">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="18"/>  
-  </realization>  
-  <association id="62">    
+  <association id="47">    
     <bendpoint x="2358" y="1078"/>    
     <bendpoint x="2358" y="1440"/>    
     <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="63" name="attackerSkill"/>      
-      <multiplicity id="64" minimum="0" maximum="1"/>    
+      <attribute id="48" name="attackerSkill">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="49" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="18" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="65">    
-    <end type="SOURCE" refId="7"/>    
+  <generalization id="50">    
+    <end type="SOURCE" refId="21"/>    
     <end type="TARGET" refId="20"/>  
   </generalization>  
-  <realization id="66">    
-    <end type="SOURCE" refId="23"/>    
+  <generalization id="51">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <generalization id="52">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <realization id="53">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="18"/>  
+  </realization>  
+  <realization id="54">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="16"/>  
+  </realization>  
+  <generalization id="55">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <realization id="56">    
+    <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="25"/>  
   </realization>  
-  <generalization id="67">    
+  <generalization id="57">    
     <end type="SOURCE" refId="29"/>    
     <end type="TARGET" refId="19"/>  
   </generalization>  
-  <realization id="68">    
-    <end type="SOURCE" refId="10"/>    
+  <realization id="58">    
+    <bendpoint x="2379" y="1440"/>    
+    <end type="SOURCE" refId="27"/>    
     <end type="TARGET" refId="12"/>  
   </realization>  
-  <realization id="69">    
+  <realization id="59">    
     <end type="SOURCE" refId="15"/>    
     <end type="TARGET" refId="13"/>  
   </realization>  
-  <association id="70">    
+  <realization id="60">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <association id="61">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="62" name="winner">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="63" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="64">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <association id="65">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="66" name="defender">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="67" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="68">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <association id="69">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="70" name="attacker">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="71" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="72">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <realization id="73">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="16"/>  
+  </realization>  
+  <realization id="74">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="18"/>  
+  </realization>  
+  <generalization id="75">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="20"/>  
+  </generalization>  
+  <association id="76">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="77" name="loser">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="78" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="79">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="25"/>  
+  </realization>  
+  <realization id="80">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="12"/>  
+  </realization>  
+  <association id="81">    
     <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="71" name="skillList"/>      
-      <multiplicity id="72" minimum="0" maximum="2147483647"/>    
+      <attribute id="82" name="skillList">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="83" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="16" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="73">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="74" name="loser"/>      
-      <multiplicity id="75" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="76">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="19"/>  
-  </generalization>  
-  <realization id="77">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="25"/>  
-  </realization>  
-  <association id="78">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="79" name="attacker"/>      
-      <multiplicity id="80" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="81">    
-    <end type="SOURCE" refId="28"/>    
-    <end type="TARGET" refId="13"/>  
-  </realization>  
-  <realization id="82">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="18"/>  
-  </realization>  
-  <realization id="83">    
-    <end type="SOURCE" refId="26"/>    
-    <end type="TARGET" refId="18"/>  
-  </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
