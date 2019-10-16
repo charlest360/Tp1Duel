@@ -43,7 +43,7 @@ public abstract class Fighter implements IFighter {
 	}
 	
 	
-	protected void validateAttributes(int strength, int dexterity, int intellect, int focus) {
+	protected void validateAttributes(int strength, int dexterity, int intellect, int focus) {//MS Beaucoup de méthodes protected. On aurait pu les mettre public puisqu'on ne peut créer un fighter...
 		validateSumOfAttributes(strength,dexterity,intellect,focus);
 		validateStrength(strength,dexterity,intellect,focus);
 		validateDexterity(strength,dexterity,intellect,focus);
@@ -108,7 +108,7 @@ public abstract class Fighter implements IFighter {
 		
 	}
 	
-	public ISkill getSkill(int index) {
+	public ISkill getSkill(int index) {//MS Cette méthode semble avoir été ajoutée seulement pour les tests. On aurait pu utiliser hasSkill() dans les tests?
 		if (this.skillList.size() <= index) {
 			throw new indexOutOfBoundsOfSkillListException();
 		}

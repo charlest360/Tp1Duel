@@ -21,7 +21,7 @@ public abstract class Spell implements ISkill {
 	}
 	
 	public int getCapacityPower(IFighter fighter) {
-		return (fighter.getIntellect()*this.efficacity)/100;
+		return (fighter.getIntellect()*this.efficacity)/100;//MS Mettre les chiffres fixes dans des constantes.
 	}
 	
 	

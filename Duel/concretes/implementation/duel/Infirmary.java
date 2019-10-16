@@ -24,7 +24,7 @@ public class Infirmary {
 	private void applyHealingSkill(IFighter fighter,IHeal healingSkill) {
 		int healingPower = healingSkill.getCapacityPower(fighter);
 		
-		fighter.setHp(fighter.getHp()+healingPower);
+		fighter.setHp(fighter.getHp()+healingPower);//MS Tell don't ask pas respecté.
 	}
 	
 	private void removeHealingSkill(IFighter fighter,IHeal healingSkill) {

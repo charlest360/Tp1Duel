@@ -43,7 +43,7 @@ public class AttackSpellTest {
 		
 		//Act
 		final int ACTUAL_POWER = attackSpell.getCapacityPower(ANY_FIGHTER_MOCK);
-		final int EXPECTED_POWER = (ANY_EFFICACITY*ANY_FIGHTER_INTELLECT/100)*3;
+		final int EXPECTED_POWER = (ANY_EFFICACITY*ANY_FIGHTER_INTELLECT/100)*3;//MS Attention aux chiffres magiques!
 		//Assert
 		
 		assertEquals(EXPECTED_POWER,ACTUAL_POWER);

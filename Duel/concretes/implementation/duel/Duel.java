@@ -61,7 +61,7 @@ public class Duel {
 	}
 	private void validateAttackerSkill(IFighter attacker,IAttack attackerSkill) {
 		if (!(attacker.hasSkill(attackerSkill))) {
-			throw new AtackerDoesntHaveSpecifiedSkillException();
+			throw new AtackerDoesntHaveSpecifiedSkillException();//MS Très bien.
 		}
 	}
 	private void validateDefenderSkill(IRipost defenderSkill) {
@@ -89,7 +89,7 @@ public class Duel {
 	}
 	
 	private void incrementWinnerAttributes() {
-		this.winner.setStrength( this.winner.getStrength() + WINNER_ATTRIBUTES_INCREMENTATION_RATE );
+		this.winner.setStrength( this.winner.getStrength() + WINNER_ATTRIBUTES_INCREMENTATION_RATE );//MS Tell don't ask: il faut dire au fighter comment augmenter ses propriétés mais pas le faire à sa place...
 		this.winner.setDexterity( this.winner.getDexterity() + WINNER_ATTRIBUTES_INCREMENTATION_RATE );
 		this.winner.setIntellect( this.winner.getIntellect() + WINNER_ATTRIBUTES_INCREMENTATION_RATE );
 		this.winner.setFocus( this.winner.getFocus() + WINNER_ATTRIBUTES_INCREMENTATION_RATE );
@@ -101,7 +101,7 @@ public class Duel {
 	
 	public void penalizeLoser() {	
 		if (this.loser.getStrength()>0) {
-			this.loser.setStrength(this.loser.getStrength() - LOSER_ATTRIBUTES_DECREMENTATION_RATE);
+			this.loser.setStrength(this.loser.getStrength() - LOSER_ATTRIBUTES_DECREMENTATION_RATE);//MS Tell don't ask: il faut dire au fighter comment augmenter ses propriétés mais pas le faire à sa place...
 		}
 		if (this.loser.getDexterity() > 0) {
 			this.loser.setDexterity(this.loser.getDexterity() - LOSER_ATTRIBUTES_DECREMENTATION_RATE);

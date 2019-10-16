@@ -24,7 +24,7 @@ public class DuelTest {
 	final String ANY_FIGHTER_NAME = "Shrek 2";
 	final IAttack ANY_WINNING_WEAPON = new PowerfulWeaponStub(); //Gagne contre toute autre skill car getCapacityPower retourne 100 tandis que les autres mocks retournent 0
 	
-	public FighterStub anyFighter ;
+	public FighterStub anyFighter ;//MS devrait être private et de type IFighter.
 	
 	
 	@Before

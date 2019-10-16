@@ -30,7 +30,7 @@ public class WizardTest {
 	final int TOO_HIGH_DEXTERITY = 200;
 	final int TOO_HIGH_INTELLECT = 200;
 	final int TOO_HIGH_FOCUS = 200;
-	
+	//MS Attention, dans Athlete, Wizard et Warrior, il ne faut pas tester le code commun de Fighter. Il faut faire un fighterTest, sinon nos tests ne sont plus indépendants.
 	
 	//Tests des compétences aux valeurs négatives 
 	
